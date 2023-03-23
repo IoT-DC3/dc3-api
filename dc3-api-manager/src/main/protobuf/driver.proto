@@ -20,7 +20,7 @@ package api.center.manager;
 
 // 配置相关
 option java_package = "io.github.pnoker.api.center.manager";
-option java_outer_classname = "PointProto";
+option java_outer_classname = "DriverProto";
 option objc_class_prefix = "Manager";
 option java_multiple_files = true;
 
@@ -30,44 +30,49 @@ import "api/common/base.proto";
 import "api/common/enums.proto";
 
 // 接口类
-service PointApi {
-  rpc list (PagePointQueryDTO) returns (RPagePointDTO);
+service DriverApi {
+  rpc selectByDeviceId (ByDeviceQueryDTO) returns (RDriverDTO);
 }
 
-// R of Page Point DTO
-message RPagePointDTO {
+//  By Device Query DTO
+message ByDeviceQueryDTO {
+  string device_id = 1; // 设备ID
+}
+
+// R of Driver DTO
+message RDriverDTO {
   api.common.RDTO result = 1; // 结果
-  PagePointDTO data = 2; // 数据
+  DriverDTO data = 2; // 数据
 }
 
-// Page Point Query DTO
-message PagePointQueryDTO {
+// R of Page Driver DTO
+message RPageDriverDTO {
+  api.common.RDTO result = 1; // 结果
+  PageDriverDTO data = 2; // 数据
+}
+
+// Page Driver DTO
+message PageDriverQueryDTO {
   api.common.PageDTO page = 1; // 结果
-  string device_id = 2; // 设备ID
-  PointDTO point = 3; // point
+  DriverDTO driver = 2; // driver
 }
 
-// Page Point DTO
-message PagePointDTO {
+// Page Driver DTO
+message PageDriverDTO {
   api.common.PageDTO page = 1; // 结果
-  repeated PointDTO data = 2; // 数据
+  repeated DriverDTO data = 2; // 数据
 }
 
-// Point DTO
-message PointDTO {
+// Driver DTO
+message DriverDTO {
   api.common.BaseDTO base = 1; // 基础
   string id = 2; // ID
-  string point_name = 3; // 位号名称
-  string point_code = 4; // 位号编号
-  api.common.PointTypeFlagDTOEnum point_type_flag = 5; // 位号类型标识
-  api.common.RwFlagDTOEnum rw_flag = 6; // 读写标识
-  double base_value = 7; // 基础值
-  double multiple = 8; // 比例系数
-  api.common.AccrueFlagDTOEnum accrue_flag = 9; // 读写标识
-  int32 value_decimal = 10; // 数据精度
-  api.common.UnitDTOEnum unit = 11; // 单位
-  string profile_id = 12; // 模板ID
-  string group_id = 13; // 分组ID
-  api.common.EnableFlagDTOEnum enable_flag = 14; // 使能标识
-  string tenant_id = 15; // 租户ID
+  string driver_name = 3; // 驱动名称
+  string driver_code = 4; // 驱动编号
+  string service_name = 5; // 驱动服务名称
+  api.common.DriverTypeFlagDTOEnum driver_type_flag = 6; // 驱动类型标识
+  string service_host = 7; // 服务主机
+  int32 service_port = 8; // 服务端口
+  api.common.EnableFlagDTOEnum enable_flag = 9; // 使能标识
+  string tenant_id = 10; // 租户ID
 }
