@@ -62,11 +62,10 @@ message PointDTO {
   api.common.RwFlagDTOEnum rw_flag = 5; // 读写标识
   double base_value = 6; // 基础值
   double multiple = 7; // 比例系数
-  api.common.AccrueFlagDTOEnum accrue_flag = 8; // 读写标识
-  int32 value_decimal = 9; // 数据精度
-  api.common.UnitDTOEnum unit = 10; // 单位
-  string profile_id = 11; // 模板ID
-  string group_id = 12; // 分组ID
-  api.common.EnableFlagDTOEnum enable_flag = 13; // 使能标识
-  string tenant_id = 14; // 租户ID
+  int32 value_decimal = 8; // 数据精度
+  string unit = 9; // 单位
+  string profile_id = 10; // 模板ID
+  string group_id = 11; // 分组ID
+  api.common.EnableFlagDTOEnum enable_flag = 12; // 使能标识
+  string tenant_id = 13; // 租户ID
 }
