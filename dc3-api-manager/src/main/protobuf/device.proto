@@ -76,9 +76,8 @@ message DeviceDTO {
   api.common.BaseDTO base = 1; // 基础
   string device_name = 2; // 位号名称
   string device_code = 3; // 位号编号
-  api.common.MultiFlagDTOEnum multi_flag = 4; // 位号类型标识
-  string driver_id = 5; // 驱动ID
-  string group_id = 6; // 分组ID
-  api.common.EnableFlagDTOEnum enable_flag = 7; // 使能标识
-  string tenant_id = 8; // 租户ID
+  string driver_id = 4; // 驱动ID
+  string group_id = 5; // 分组ID
+  api.common.EnableFlagDTOEnum enable_flag = 6; // 使能标识
+  string tenant_id = 7; // 租户ID
 }
