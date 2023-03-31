@@ -72,7 +72,6 @@ message DriverDTO {
   string service_name = 4; // 驱动服务名称
   api.common.DriverTypeFlagDTOEnum driver_type_flag = 5; // 驱动类型标识
   string service_host = 6; // 服务主机
-  int32 service_port = 7; // 服务端口
-  api.common.EnableFlagDTOEnum enable_flag = 8; // 使能标识
-  string tenant_id = 9; // 租户ID
+  api.common.EnableFlagDTOEnum enable_flag = 7; // 使能标识
+  string tenant_id = 8; // 租户ID
 }
