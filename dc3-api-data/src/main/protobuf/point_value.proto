@@ -25,9 +25,6 @@ option objc_class_prefix = "Data";
 option java_multiple_files = true;
 
 import "api/common/r.proto";
-import "api/common/page.proto";
-import "api/common/base.proto";
-import "api/common/enums.proto";
 
 // 接口类
 service PointValueApi {
