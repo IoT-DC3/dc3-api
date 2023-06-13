@@ -18,30 +18,30 @@ syntax = "proto3";
 
 package api.center.auth;
 
+import "api/common/r.proto";
+
 // 配置相关
 option java_package = "io.github.pnoker.api.center.auth";
 option java_outer_classname = "TokenProto";
 option objc_class_prefix = "Auth";
 option java_multiple_files = true;
 
-import "api/common/r.proto";
-
 // 接口类
 service TokenApi {
-  rpc checkTokenValid (LoginQuery) returns (RTokenDTO);
+    rpc checkTokenValid (LoginQuery) returns (RTokenDTO);
 }
 
 // checkTokenValid Query
 message LoginQuery {
-  string tenant = 1; // 租户
-  string name = 2; // 登录名称
-  string salt = 3; // 盐值
-  string password = 4; // 登录密码
-  string token = 5; // 令牌
+    string tenant = 1; // 租户
+    string name = 2; // 登录名称
+    string salt = 3; // 盐值
+    string password = 4; // 登录密码
+    string token = 5; // 令牌
 }
 
 // R of Token DTO
 message RTokenDTO {
-  api.common.RDTO result = 1; // 结果
-  string data = 2; // 数据
+    api.common.RDTO result = 1; // 结果
+    string data = 2; // 数据
 }

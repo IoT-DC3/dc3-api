@@ -18,26 +18,26 @@ syntax = "proto3";
 
 package api.center.auth;
 
+import "api/common/r.proto";
+
 // 配置相关
 option java_package = "io.github.pnoker.api.center.auth";
 option java_outer_classname = "BlackIpProto";
 option objc_class_prefix = "Auth";
 option java_multiple_files = true;
 
-import "api/common/r.proto";
-
 // 接口类
 service BlackIpApi {
-  rpc checkBlackIpValid (IpQuery) returns (RBlackIpDTO);
+    rpc checkBlackIpValid (IpQuery) returns (RBlackIpDTO);
 }
 
 // checkBlackIpValid Query
 message IpQuery {
-  string ip = 1;
+    string ip = 1;
 }
 
 // R of BlackIp DTO
 message RBlackIpDTO {
-  api.common.RDTO result = 1; // 结果
-  bool data = 2; // 数据
+    api.common.RDTO result = 1; // 结果
+    bool data = 2; // 数据
 }

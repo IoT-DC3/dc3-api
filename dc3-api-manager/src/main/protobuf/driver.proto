@@ -18,60 +18,60 @@ syntax = "proto3";
 
 package api.center.manager;
 
+import "api/common/base.proto";
+import "api/common/enums.proto";
+import "api/common/page.proto";
+import "api/common/r.proto";
+
 // 配置相关
 option java_package = "io.github.pnoker.api.center.manager";
 option java_outer_classname = "DriverProto";
 option objc_class_prefix = "Manager";
 option java_multiple_files = true;
 
-import "api/common/r.proto";
-import "api/common/page.proto";
-import "api/common/base.proto";
-import "api/common/enums.proto";
-
 // 接口类
 service DriverApi {
-  rpc list (PageDriverQueryDTO) returns (RPageDriverDTO);
-  rpc selectByDeviceId (ByDeviceQueryDTO) returns (RDriverDTO);
+    rpc list (PageDriverQueryDTO) returns (RPageDriverDTO);
+    rpc selectByDeviceId (ByDeviceQueryDTO) returns (RDriverDTO);
 }
 
 //  By Device Query DTO
 message ByDeviceQueryDTO {
-  string device_id = 1; // 设备ID
+    string device_id = 1; // 设备ID
 }
 
 // R of Driver DTO
 message RDriverDTO {
-  api.common.RDTO result = 1; // 结果
-  DriverDTO data = 2; // 数据
+    api.common.RDTO result = 1; // 结果
+    DriverDTO data = 2; // 数据
 }
 
 // R of Page Driver DTO
 message RPageDriverDTO {
-  api.common.RDTO result = 1; // 结果
-  PageDriverDTO data = 2; // 数据
+    api.common.RDTO result = 1; // 结果
+    PageDriverDTO data = 2; // 数据
 }
 
 // Page Driver DTO
 message PageDriverQueryDTO {
-  api.common.PageDTO page = 1; // 结果
-  DriverDTO driver = 2; // driver
+    api.common.PageDTO page = 1; // 结果
+    DriverDTO driver = 2; // driver
 }
 
 // Page Driver DTO
 message PageDriverDTO {
-  api.common.PageDTO page = 1; // 结果
-  repeated DriverDTO data = 2; // 数据
+    api.common.PageDTO page = 1; // 结果
+    repeated DriverDTO data = 2; // 数据
 }
 
 // Driver DTO
 message DriverDTO {
-  api.common.BaseDTO base = 1; // 基础
-  string driver_name = 2; // 驱动名称
-  string driver_code = 3; // 驱动编号
-  string service_name = 4; // 驱动服务名称
-  api.common.DriverTypeFlagDTOEnum driver_type_flag = 5; // 驱动类型标识
-  string service_host = 6; // 服务主机
-  api.common.EnableFlagDTOEnum enable_flag = 7; // 使能标识
-  string tenant_id = 8; // 租户ID
+    api.common.BaseDTO base = 1; // 基础
+    string driver_name = 2; // 驱动名称
+    string driver_code = 3; // 驱动编号
+    string service_name = 4; // 驱动服务名称
+    api.common.DriverTypeFlagDTOEnum driver_type_flag = 5; // 驱动类型标识
+    string service_host = 6; // 服务主机
+    api.common.EnableFlagDTOEnum enable_flag = 7; // 使能标识
+    string tenant_id = 8; // 租户ID
 }
