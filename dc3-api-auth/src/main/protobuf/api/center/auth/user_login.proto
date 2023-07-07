@@ -30,25 +30,25 @@ option java_multiple_files = true;
 
 // 接口类
 service UserLoginApi {
-    rpc selectByName (NameQuery) returns (RUserLoginDTO);
+  rpc selectByName (NameQuery) returns (RUserLoginDTO);
 }
 
 // selectByName Query
 message NameQuery {
-    string name = 1;
+  string name = 1;
 }
 
 // R of UserLogin DTO
 message RUserLoginDTO {
-    api.common.RDTO result = 1; // 结果
-    UserLoginDTO data = 2; // 数据
+  api.common.RDTO result = 1; // 结果
+  UserLoginDTO data = 2; // 数据
 }
 
 // UserLogin DTO
 message UserLoginDTO {
-    api.common.BaseDTO base = 1; // 基础
-    string login_name = 2; // 登录名称
-    string user_id = 3; // 用户ID
-    string user_password_id = 4; // 用户密码ID
-    api.common.EnableFlagDTOEnum enable_flag = 5; // 使能标识
+  api.common.BaseDTO base = 1; // 基础
+  string login_name = 2; // 登录名称
+  string user_id = 3; // 用户ID
+  string user_password_id = 4; // 用户密码ID
+  api.common.EnableFlagDTOEnum enable_flag = 5; // 使能标识
 }

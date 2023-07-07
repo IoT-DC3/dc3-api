@@ -28,20 +28,20 @@ option java_multiple_files = true;
 
 // 接口类
 service TokenApi {
-    rpc checkTokenValid (LoginQuery) returns (RTokenDTO);
+  rpc checkTokenValid (LoginQuery) returns (RTokenDTO);
 }
 
 // checkTokenValid Query
 message LoginQuery {
-    string tenant = 1; // 租户
-    string name = 2; // 登录名称
-    string salt = 3; // 盐值
-    string password = 4; // 登录密码
-    string token = 5; // 令牌
+  string tenant = 1; // 租户
+  string name = 2; // 登录名称
+  string salt = 3; // 盐值
+  string password = 4; // 登录密码
+  string token = 5; // 令牌
 }
 
 // R of Token DTO
 message RTokenDTO {
-    api.common.RDTO result = 1; // 结果
-    string data = 2; // 数据
+  api.common.RDTO result = 1; // 结果
+  string data = 2; // 数据
 }
