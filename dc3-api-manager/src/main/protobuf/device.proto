@@ -31,53 +31,53 @@ option java_multiple_files = true;
 
 // 接口类
 service DeviceApi {
-    rpc list (PageDeviceQueryDTO) returns (RPageDeviceDTO);
-    rpc selectByProfileId (ByProfileQueryDTO) returns (RDeviceListDTO);
+  rpc list (PageDeviceQueryDTO) returns (RPageDeviceDTO);
+  rpc selectByProfileId (ByProfileQueryDTO) returns (RDeviceListDTO);
 }
 
 //  By Profile Query DTO
 message ByProfileQueryDTO {
-    string profile_id = 1; // 模板ID
+  string profile_id = 1; // 模板ID
 }
 
 // R of Device DTO
 message RDeviceDTO {
-    api.common.RDTO result = 1; // 结果
-    DeviceDTO data = 2; // 数据
+  api.common.RDTO result = 1; // 结果
+  DeviceDTO data = 2; // 数据
 }
 
 // R of Device DTO Array
 message RDeviceListDTO {
-    api.common.RDTO result = 1; // 结果
-    repeated DeviceDTO data = 2; // 数据
+  api.common.RDTO result = 1; // 结果
+  repeated DeviceDTO data = 2; // 数据
 }
 
 // R of Page Device DTO
 message RPageDeviceDTO {
-    api.common.RDTO result = 1; // 结果
-    PageDeviceDTO data = 2; // 数据
+  api.common.RDTO result = 1; // 结果
+  PageDeviceDTO data = 2; // 数据
 }
 
 // Page Device Query DTO
 message PageDeviceQueryDTO {
-    api.common.PageDTO page = 1; // 结果
-    string profile_id = 2; // 模板ID
-    DeviceDTO device = 3; // device
+  api.common.PageDTO page = 1; // 结果
+  string profile_id = 2; // 模板ID
+  DeviceDTO device = 3; // device
 }
 
 // Page Device DTO
 message PageDeviceDTO {
-    api.common.PageDTO page = 1; // 结果
-    repeated DeviceDTO data = 2; // 数据
+  api.common.PageDTO page = 1; // 结果
+  repeated DeviceDTO data = 2; // 数据
 }
 
 // Device DTO
 message DeviceDTO {
-    api.common.BaseDTO base = 1; // 基础
-    string device_name = 2; // 位号名称
-    string device_code = 3; // 位号编号
-    string driver_id = 4; // 驱动ID
-    string group_id = 5; // 分组ID
-    api.common.EnableFlagDTOEnum enable_flag = 6; // 使能标识
-    string tenant_id = 7; // 租户ID
+  api.common.BaseDTO base = 1; // 基础
+  string device_name = 2; // 位号名称
+  string device_code = 3; // 位号编号
+  string driver_id = 4; // 驱动ID
+  string group_id = 5; // 分组ID
+  api.common.EnableFlagDTOEnum enable_flag = 6; // 使能标识
+  string tenant_id = 7; // 租户ID
 }
