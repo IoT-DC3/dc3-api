@@ -30,27 +30,27 @@ option java_multiple_files = true;
 
 // 接口类
 service UserApi {
-  rpc selectById (IdQuery) returns (RUserDTO);
+    rpc selectById (IdQuery) returns (RUserDTO);
 }
 
 // selectById Query
 message IdQuery {
-  string id = 1;
+    string id = 1;
 }
 
 // R of User DTO
 message RUserDTO {
-  api.common.RDTO result = 1; // 结果
-  UserDTO data = 2; // 数据
+    api.common.RDTO result = 1; // 结果
+    UserDTO data = 2; // 数据
 }
 
 // User DTO
 message UserDTO {
-  api.common.BaseDTO base = 1; // 基础
-  string nick_name = 2; // 用户昵称
-  string user_name = 3; // 用户名称
-  string phone = 4; // 手机号
-  string email = 5; // 邮箱
-  string social_ext = 6; // 社交相关拓展信息，加密存储
-  string identity_ext = 7; // 身份相关拓展信息，加密存储
+    api.common.BaseDTO base = 1; // 基础
+    string nick_name = 2; // 用户昵称
+    string user_name = 3; // 用户名称
+    string phone = 4; // 手机号
+    string email = 5; // 邮箱
+    string social_ext = 6; // 社交相关拓展信息，加密存储
+    string identity_ext = 7; // 身份相关拓展信息，加密存储
 }

@@ -30,24 +30,24 @@ option java_multiple_files = true;
 
 // 接口类
 service TenantApi {
-  rpc selectByCode (CodeQuery) returns (RTenantDTO);
+    rpc selectByCode (CodeQuery) returns (RTenantDTO);
 }
 
 // selectByCode Query
 message CodeQuery {
-  string code = 1;
+    string code = 1;
 }
 
 // R of Tenant DTO
 message RTenantDTO {
-  api.common.RDTO result = 1; // 结果
-  TenantDTO data = 2; // 数据
+    api.common.RDTO result = 1; // 结果
+    TenantDTO data = 2; // 数据
 }
 
 // Tenant DTO
 message TenantDTO {
-  api.common.BaseDTO base = 1; // 基础
-  string tenant_name = 2; // 租户名称
-  string tenant_code = 3; // 租户编号
-  api.common.EnableFlagDTOEnum enable_flag = 4; // 使能标识
+    api.common.BaseDTO base = 1; // 基础
+    string tenant_name = 2; // 租户名称
+    string tenant_code = 3; // 租户编号
+    api.common.EnableFlagDTOEnum enable_flag = 4; // 使能标识
 }
