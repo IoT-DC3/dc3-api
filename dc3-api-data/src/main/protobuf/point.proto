@@ -54,8 +54,8 @@ message RPagePointDTO {
 // Page Point DTO
 message PagePointQuery {
     api.common.PageDTO page = 1; // 结果
-    string device_id = 2; // 设备ID
-    string tenant_id = 3; // 租户ID
+    int64 device_id = 2; // 设备ID
+    int64 tenant_id = 3; // 租户ID
     PointDTO point = 4; // point
 }
 
@@ -76,8 +76,8 @@ message PointDTO {
     double multiple = 7; // 比例系数
     int32 value_decimal = 8; // 数据精度
     string unit = 9; // 单位
-    string profileId = 10; // 模板ID
-    string groupId = 11; // 分组ID
+    int64 profile_id = 10; // 模板ID
+    int64 group_id = 11; // 分组ID
     api.common.EnableFlagDTOEnum enable_flag = 12; // 使能标识
 }
 

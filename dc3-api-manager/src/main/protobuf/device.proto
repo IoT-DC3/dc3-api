@@ -37,7 +37,7 @@ service DeviceApi {
 
 //  By Profile Query DTO
 message ByProfileQueryDTO {
-    string profile_id = 1; // 模板ID
+    int64 profile_id = 1; // 模板ID
 }
 
 // R of Device DTO
@@ -61,7 +61,7 @@ message RPageDeviceDTO {
 // Page Device Query DTO
 message PageDeviceQueryDTO {
     api.common.PageDTO page = 1; // 结果
-    string profile_id = 2; // 模板ID
+    int64 profile_id = 2; // 模板ID
     DeviceDTO device = 3; // device
 }
 
@@ -76,8 +76,8 @@ message DeviceDTO {
     api.common.BaseDTO base = 1; // 基础
     string device_name = 2; // 位号名称
     string device_code = 3; // 位号编号
-    string driver_id = 4; // 驱动ID
-    string group_id = 5; // 分组ID
+    int64 driver_id = 4; // 驱动ID
+    int64 group_id = 5; // 分组ID
     api.common.EnableFlagDTOEnum enable_flag = 6; // 使能标识
-    string tenant_id = 7; // 租户ID
+    int64 tenant_id = 7; // 租户ID
 }
