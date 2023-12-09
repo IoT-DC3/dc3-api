@@ -68,8 +68,8 @@
         <module>dc3-api-data</module>
     </modules>
 
-    <profiles>
-        <profile>
+    <profileBOS>
+        <profileBO>
             <id>deploy</id>
             <build>
                 <plugins>
@@ -102,8 +102,8 @@
                     <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
                 </snapshotRepository>
             </distributionManagement>
-        </profile>
-    </profiles>
+        </profileBO>
+    </profileBOS>
 
     <dependencies>
 
