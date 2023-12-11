@@ -39,13 +39,13 @@ message GrpcNameQuery {
 
 // R of UserLogin DTO
 message GrpcRUserLoginDTO {
-    api.common.RDTO result = 1; // 结果
+    api.common.GrpcRDTO result = 1; // 结果
     GrpcUserLoginDTO data = 2; // 数据
 }
 
 // UserLogin DTO
 message GrpcUserLoginDTO {
-    api.common.BaseDTO base = 1; // 基础
+    api.common.GrpcBaseDTO base = 1; // 基础
     string login_name = 2; // 登录名称
     int64 user_id = 3; // 用户ID
     int64 user_password_id = 4; // 用户密码ID

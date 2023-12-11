@@ -41,38 +41,38 @@ message GrpcByProfileQueryDTO {
 
 // R of Device DTO
 message GrpcRDeviceDTO {
-    api.common.RDTO result = 1; // 结果
+    api.common.GrpcRDTO result = 1; // 结果
     DeviceDTO data = 2; // 数据
 }
 
 // R of Device DTO Array
 message GrpcRDeviceListDTO {
-    api.common.RDTO result = 1; // 结果
+    api.common.GrpcRDTO result = 1; // 结果
     repeated DeviceDTO data = 2; // 数据
 }
 
 // R of Page Device DTO
 message GrpcRPageDeviceDTO {
-    api.common.RDTO result = 1; // 结果
+    api.common.GrpcRDTO result = 1; // 结果
     GrpcPageDeviceDTO data = 2; // 数据
 }
 
 // Page Device Query DTO
 message GrpcPageDeviceQueryDTO {
-    api.common.PageDTO page = 1; // 结果
+    api.common.GrpcPageDTO page = 1; // 结果
     int64 profile_id = 2; // 模板ID
     DeviceDTO device = 3; // device
 }
 
 // Page Device DTO
 message GrpcPageDeviceDTO {
-    api.common.PageDTO page = 1; // 结果
+    api.common.GrpcPageDTO page = 1; // 结果
     repeated DeviceDTO data = 2; // 数据
 }
 
 // Device DTO
 message DeviceDTO {
-    api.common.BaseDTO base = 1; // 基础
+    api.common.GrpcBaseDTO base = 1; // 基础
     string device_name = 2; // 位号名称
     string device_code = 3; // 位号编号
     int64 driver_id = 4; // 驱动ID

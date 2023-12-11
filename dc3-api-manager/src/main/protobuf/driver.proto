@@ -41,31 +41,31 @@ message GrpcByDeviceQueryDTO {
 
 // R of Driver DTO
 message GrpcRDriverDTO {
-    api.common.RDTO result = 1; // 结果
+    api.common.GrpcRDTO result = 1; // 结果
     GrpcDriverDTO data = 2; // 数据
 }
 
 // R of Page Driver DTO
 message GrpcRPageDriverDTO {
-    api.common.RDTO result = 1; // 结果
+    api.common.GrpcRDTO result = 1; // 结果
     GrpcPageDriverDTO data = 2; // 数据
 }
 
 // Page Driver DTO
 message GrpcPageDriverQueryDTO {
-    api.common.PageDTO page = 1; // 结果
+    api.common.GrpcPageDTO page = 1; // 结果
     GrpcDriverDTO driver = 2; // driver
 }
 
 // Page Driver DTO
 message GrpcPageDriverDTO {
-    api.common.PageDTO page = 1; // 结果
+    api.common.GrpcPageDTO page = 1; // 结果
     repeated GrpcDriverDTO data = 2; // 数据
 }
 
 // Driver DTO
 message GrpcDriverDTO {
-    api.common.BaseDTO base = 1; // 基础
+    api.common.GrpcBaseDTO base = 1; // 基础
     string driver_name = 2; // 驱动名称
     string driver_code = 3; // 驱动编号
     string service_name = 4; // 驱动服务名称

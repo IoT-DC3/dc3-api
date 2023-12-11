@@ -40,19 +40,19 @@ message GrpcNameQuery {
 
 // R of Point DTO
 message GrpcRPointDTO {
-    api.common.RDTO result = 1; // 结果
+    api.common.GrpcRDTO result = 1; // 结果
     GrpcPointDTO data = 2; // 数据
 }
 
 // R of Page Point DTO
 message GrpcRPagePointDTO {
-    api.common.RDTO result = 1; // 结果
+    api.common.GrpcRDTO result = 1; // 结果
     GrpcPagePointDTO data = 2; // 数据
 }
 
 // Page Point DTO
 message GrpcPagePointQuery {
-    api.common.PageDTO page = 1; // 结果
+    api.common.GrpcPageDTO page = 1; // 结果
     int64 device_id = 2; // 设备ID
     int64 tenant_id = 3; // 租户ID
     GrpcPointDTO point = 4; // point
@@ -60,13 +60,13 @@ message GrpcPagePointQuery {
 
 // Page Point DTO
 message GrpcPagePointDTO {
-    api.common.PageDTO page = 1; // 结果
+    api.common.GrpcPageDTO page = 1; // 结果
     repeated GrpcPointDTO data = 2; // 数据
 }
 
 // Point DTO
 message GrpcPointDTO {
-    api.common.BaseDTO base = 1; // 基础
+    api.common.GrpcBaseDTO base = 1; // 基础
     string point_name = 2; // 位号名称
     string point_code = 3; // 位号编号
     int32 point_type_flag = 4; // 位号类型标识

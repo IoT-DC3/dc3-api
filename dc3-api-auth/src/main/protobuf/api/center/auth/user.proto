@@ -39,13 +39,13 @@ message GrpcIdQuery {
 
 // R of User DTO
 message GrpcRUserDTO {
-    api.common.RDTO result = 1; // 结果
+    api.common.GrpcRDTO result = 1; // 结果
     GrpcUserDTO data = 2; // 数据
 }
 
 // User DTO
 message GrpcUserDTO {
-    api.common.BaseDTO base = 1; // 基础
+    api.common.GrpcBaseDTO base = 1; // 基础
     string nick_name = 2; // 用户昵称
     string user_name = 3; // 用户名称
     string phone = 4; // 手机号

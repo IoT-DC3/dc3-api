@@ -39,7 +39,7 @@ message GrpcPointValueQuery {
 
 
 message GrpcRPointValueDTO {
-    api.common.RDTO result = 1; // 结果
+    api.common.GrpcRDTO result = 1; // 结果
     GrpcPointValueDTO data = 2; // 数据
 }
 

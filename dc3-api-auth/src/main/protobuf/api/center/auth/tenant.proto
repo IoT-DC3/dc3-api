@@ -39,13 +39,13 @@ message GrpcCodeQuery {
 
 // R of Tenant DTO
 message GrpcRTenantDTO {
-    api.common.RDTO result = 1; // 结果
+    api.common.GrpcRDTO result = 1; // 结果
     GrpcTenantDTO data = 2; // 数据
 }
 
 // Tenant DTO
 message GrpcTenantDTO {
-    api.common.BaseDTO base = 1; // 基础
+    api.common.GrpcBaseDTO base = 1; // 基础
     string tenant_name = 2; // 租户名称
     string tenant_code = 3; // 租户编号
     int32 enable_flag = 4; // 使能标识

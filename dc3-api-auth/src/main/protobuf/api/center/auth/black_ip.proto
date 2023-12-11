@@ -38,6 +38,6 @@ message GrpcIpQuery {
 
 // R of BlackIp DTO
 message GrpcRBlackIpDTO {
-    api.common.RDTO result = 1; // 结果
+    api.common.GrpcRDTO result = 1; // 结果
     bool data = 2; // 数据
 }
