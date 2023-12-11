@@ -22,13 +22,13 @@ import "api/common/base.proto";
 import "api/common/enums.proto";
 import "api/common/r.proto";
 
-// 配置相关
+/*配置相关*/
 option java_package = "io.github.pnoker.api.center.auth";
 option java_outer_classname = "UserLoginProto";
 option objc_class_prefix = "Auth";
 option java_multiple_files = true;
 
-// 接口类
+/*接口类*/
 service UserLoginApi {
     rpc selectByName (NameQuery) returns (RUserLoginDTO);
 }

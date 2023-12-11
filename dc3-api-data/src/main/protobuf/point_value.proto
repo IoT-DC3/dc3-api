@@ -20,13 +20,13 @@ package api.center.data;
 
 import "api/common/r.proto";
 
-// 配置相关
+/*配置相关*/
 option java_package = "io.github.pnoker.api.center.data";
 option java_outer_classname = "PointValueProto";
 option objc_class_prefix = "Data";
 option java_multiple_files = true;
 
-// 接口类
+/*接口类*/
 service PointValueApi {
     rpc lastValue (PointValueQuery) returns (RPointValueDTO);
 }

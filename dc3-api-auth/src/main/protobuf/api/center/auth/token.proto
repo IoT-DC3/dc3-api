@@ -20,13 +20,13 @@ package api.center.auth;
 
 import "api/common/r.proto";
 
-// 配置相关
+/*配置相关*/
 option java_package = "io.github.pnoker.api.center.auth";
 option java_outer_classname = "TokenProto";
 option objc_class_prefix = "Auth";
 option java_multiple_files = true;
 
-// 接口类
+/*接口类*/
 service TokenApi {
     rpc checkTokenValid (LoginQuery) returns (RTokenDTO);
 }
