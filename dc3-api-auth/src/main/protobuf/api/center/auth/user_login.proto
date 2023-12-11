@@ -19,7 +19,6 @@ syntax = "proto3";
 package api.center.auth;
 
 import "api/common/base.proto";
-import "api/common/enums.proto";
 import "api/common/r.proto";
 
 /*配置相关*/
@@ -30,25 +29,25 @@ option java_multiple_files = true;
 
 /*接口类*/
 service UserLoginApi {
-    rpc selectByName (NameQuery) returns (RUserLoginDTO);
+    rpc selectByName (GrpcNameQuery) returns (GrpcRUserLoginDTO);
 }
 
 // selectByName Query
-message NameQuery {
+message GrpcNameQuery {
     string name = 1;
 }
 
 // R of UserLogin DTO
-message RUserLoginDTO {
+message GrpcRUserLoginDTO {
     api.common.RDTO result = 1; // 结果
-    UserLoginDTO data = 2; // 数据
+    GrpcUserLoginDTO data = 2; // 数据
 }
 
 // UserLogin DTO
-message UserLoginDTO {
+message GrpcUserLoginDTO {
     api.common.BaseDTO base = 1; // 基础
     string login_name = 2; // 登录名称
     int64 user_id = 3; // 用户ID
     int64 user_password_id = 4; // 用户密码ID
-    api.common.EnableFlagDTOEnum enable_flag = 5; // 使能标识
+    int32 enable_flag = 5; // 使能标识
 }

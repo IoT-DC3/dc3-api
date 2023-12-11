@@ -19,7 +19,6 @@ syntax = "proto3";
 package api.center.auth;
 
 import "api/common/base.proto";
-import "api/common/enums.proto";
 import "api/common/r.proto";
 
 /*配置相关*/
@@ -30,22 +29,22 @@ option java_multiple_files = true;
 
 /*接口类*/
 service UserApi {
-    rpc selectById (IdQuery) returns (RUserDTO);
+    rpc selectById (GrpcIdQuery) returns (GrpcRUserDTO);
 }
 
 // selectById Query
-message IdQuery {
+message GrpcIdQuery {
     int64 id = 1;
 }
 
 // R of User DTO
-message RUserDTO {
+message GrpcRUserDTO {
     api.common.RDTO result = 1; // 结果
-    UserDTO data = 2; // 数据
+    GrpcUserDTO data = 2; // 数据
 }
 
 // User DTO
-message UserDTO {
+message GrpcUserDTO {
     api.common.BaseDTO base = 1; // 基础
     string nick_name = 2; // 用户昵称
     string user_name = 3; // 用户名称

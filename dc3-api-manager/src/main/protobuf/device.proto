@@ -19,7 +19,6 @@ syntax = "proto3";
 package api.center.manager;
 
 import "api/common/base.proto";
-import "api/common/enums.proto";
 import "api/common/page.proto";
 import "api/common/r.proto";
 
@@ -31,42 +30,42 @@ option java_multiple_files = true;
 
 /*接口类*/
 service DeviceApi {
-    rpc list (PageDeviceQueryDTO) returns (RPageDeviceDTO);
-    rpc selectByProfileId (ByProfileQueryDTO) returns (RDeviceListDTO);
+    rpc list (GrpcPageDeviceQueryDTO) returns (GrpcRPageDeviceDTO);
+    rpc selectByProfileId (GrpcByProfileQueryDTO) returns (GrpcRDeviceListDTO);
 }
 
 //  By Profile Query DTO
-message ByProfileQueryDTO {
+message GrpcByProfileQueryDTO {
     int64 profile_id = 1; // 模板ID
 }
 
 // R of Device DTO
-message RDeviceDTO {
+message GrpcRDeviceDTO {
     api.common.RDTO result = 1; // 结果
     DeviceDTO data = 2; // 数据
 }
 
 // R of Device DTO Array
-message RDeviceListDTO {
+message GrpcRDeviceListDTO {
     api.common.RDTO result = 1; // 结果
     repeated DeviceDTO data = 2; // 数据
 }
 
 // R of Page Device DTO
-message RPageDeviceDTO {
+message GrpcRPageDeviceDTO {
     api.common.RDTO result = 1; // 结果
-    PageDeviceDTO data = 2; // 数据
+    GrpcPageDeviceDTO data = 2; // 数据
 }
 
 // Page Device Query DTO
-message PageDeviceQueryDTO {
+message GrpcPageDeviceQueryDTO {
     api.common.PageDTO page = 1; // 结果
     int64 profile_id = 2; // 模板ID
     DeviceDTO device = 3; // device
 }
 
 // Page Device DTO
-message PageDeviceDTO {
+message GrpcPageDeviceDTO {
     api.common.PageDTO page = 1; // 结果
     repeated DeviceDTO data = 2; // 数据
 }
@@ -78,6 +77,6 @@ message DeviceDTO {
     string device_code = 3; // 位号编号
     int64 driver_id = 4; // 驱动ID
     int64 group_id = 5; // 分组ID
-    api.common.EnableFlagDTOEnum enable_flag = 6; // 使能标识
+    int32 enable_flag = 6; // 使能标识
     int64 tenant_id = 7; // 租户ID
 }

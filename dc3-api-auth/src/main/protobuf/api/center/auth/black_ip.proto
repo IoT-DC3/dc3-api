@@ -28,16 +28,16 @@ option java_multiple_files = true;
 
 /*接口类*/
 service BlackIpApi {
-    rpc checkBlackIpValid (IpQuery) returns (RBlackIpDTO);
+    rpc checkBlackIpValid (GrpcIpQuery) returns (GrpcRBlackIpDTO);
 }
 
 // checkBlackIpValid Query
-message IpQuery {
+message GrpcIpQuery {
     string ip = 1;
 }
 
 // R of BlackIp DTO
-message RBlackIpDTO {
+message GrpcRBlackIpDTO {
     api.common.RDTO result = 1; // 结果
     bool data = 2; // 数据
 }

@@ -28,11 +28,11 @@ option java_multiple_files = true;
 
 /*接口类*/
 service TokenApi {
-    rpc checkTokenValid (LoginQuery) returns (RTokenDTO);
+    rpc checkTokenValid (GrpcLoginQuery) returns (GrpcRTokenDTO);
 }
 
 // checkTokenValid Query
-message LoginQuery {
+message GrpcLoginQuery {
     string tenant = 1; // 租户
     string name = 2; // 登录名称
     string salt = 3; // 盐值
@@ -41,7 +41,7 @@ message LoginQuery {
 }
 
 // R of Token DTO
-message RTokenDTO {
+message GrpcRTokenDTO {
     api.common.RDTO result = 1; // 结果
     string data = 2; // 数据
 }

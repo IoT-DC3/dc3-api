@@ -28,23 +28,23 @@ option java_multiple_files = true;
 
 /*接口类*/
 service PointValueApi {
-    rpc lastValue (PointValueQuery) returns (RPointValueDTO);
+    rpc lastValue (GrpcPointValueQuery) returns (GrpcRPointValueDTO);
 }
 
-message PointValueQuery {
+message GrpcPointValueQuery {
     int64 device_id = 1; // 设备ID
     int64 tenant_id = 2; // 租户ID
     int64 point_id = 3; //点位ID
 }
 
 
-message RPointValueDTO {
+message GrpcRPointValueDTO {
     api.common.RDTO result = 1; // 结果
-    PointValueDTO data = 2; // 数据
+    GrpcPointValueDTO data = 2; // 数据
 }
 
 
-message PointValueDTO {
+message GrpcPointValueDTO {
     int64 id = 1;
     int64 device_id = 2;//设备ID
     int64 point_id = 3;//位号ID
