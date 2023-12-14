@@ -29,7 +29,7 @@ option java_multiple_files = true;
 
 /*接口类*/
 service UserLoginApi {
-    rpc selectByName (GrpcNameQuery) returns (GrpcRUserLoginDTO);
+    rpc SelectByName (GrpcNameQuery) returns (GrpcRUserLoginDTO);
 }
 
 // selectByName Query

@@ -30,7 +30,7 @@ option java_multiple_files = true;
 
 /*接口类*/
 service PointApi {
-    rpc list (GrpcPagePointQueryDTO) returns (GrpcRPagePointDTO);
+    rpc List (GrpcPagePointQueryDTO) returns (GrpcRPagePointDTO);
 }
 
 // R of Page Point DTO
@@ -66,5 +66,7 @@ message GrpcPointDTO {
     int64 profile_id = 10; // 模板ID
     int64 group_id = 11; // 分组ID
     int32 enable_flag = 12; // 使能标识
-    int64 tenant_id = 13; // 租户ID
+
+    /*租户ID*/
+    int64 tenant_id = 13;
 }

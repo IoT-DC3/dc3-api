@@ -28,7 +28,7 @@ option java_multiple_files = true;
 
 /*接口类*/
 service PointValueApi {
-    rpc lastValue (GrpcPointValueQuery) returns (GrpcRPointValueDTO);
+    rpc LastValue (GrpcPointValueQuery) returns (GrpcRPointValueDTO);
 }
 
 message GrpcPointValueQuery {

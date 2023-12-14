@@ -28,7 +28,7 @@ option java_multiple_files = true;
 
 /*接口类*/
 service TokenApi {
-    rpc checkTokenValid (GrpcLoginQuery) returns (GrpcRTokenDTO);
+    rpc CheckTokenValid (GrpcLoginQuery) returns (GrpcRTokenDTO);
 }
 
 // checkTokenValid Query

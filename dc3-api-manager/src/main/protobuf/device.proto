@@ -30,8 +30,8 @@ option java_multiple_files = true;
 
 /*接口类*/
 service DeviceApi {
-    rpc list (GrpcPageDeviceQueryDTO) returns (GrpcRPageDeviceDTO);
-    rpc selectByProfileId (GrpcByProfileQueryDTO) returns (GrpcRDeviceListDTO);
+    rpc List (GrpcPageDeviceQueryDTO) returns (GrpcRPageDeviceDTO);
+    rpc SelectByProfileId (GrpcByProfileQueryDTO) returns (GrpcRDeviceListDTO);
 }
 
 //  By Profile Query DTO
