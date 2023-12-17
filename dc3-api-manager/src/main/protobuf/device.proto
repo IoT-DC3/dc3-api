@@ -41,19 +41,22 @@ message GrpcByProfileQueryDTO {
 
 // R of Device DTO
 message GrpcRDeviceDTO {
-    api.common.GrpcRDTO result = 1; // 结果
+    /*结果*/
+    api.common.GrpcRDTO result = 1;
     DeviceDTO data = 2; // 数据
 }
 
 // R of Device DTO Array
 message GrpcRDeviceListDTO {
-    api.common.GrpcRDTO result = 1; // 结果
+    /*结果*/
+    api.common.GrpcRDTO result = 1;
     repeated DeviceDTO data = 2; // 数据
 }
 
 // R of Page Device DTO
 message GrpcRPageDeviceDTO {
-    api.common.GrpcRDTO result = 1; // 结果
+    /*结果*/
+    api.common.GrpcRDTO result = 1;
     GrpcPageDeviceDTO data = 2; // 数据
 }
 

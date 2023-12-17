@@ -42,6 +42,7 @@ message GrpcLoginQuery {
 
 // R of Token DTO
 message GrpcRTokenDTO {
-    api.common.GrpcRDTO result = 1; // 结果
+    /*结果*/
+    api.common.GrpcRDTO result = 1;
     string data = 2; // 数据
 }

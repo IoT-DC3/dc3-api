@@ -39,7 +39,8 @@ message GrpcIdQuery {
 
 // R of User DTO
 message GrpcRUserDTO {
-    api.common.GrpcRDTO result = 1; // 结果
+    /*结果*/
+    api.common.GrpcRDTO result = 1;
     GrpcUserDTO data = 2; // 数据
 }
 

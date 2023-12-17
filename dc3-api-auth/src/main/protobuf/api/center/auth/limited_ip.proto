@@ -22,22 +22,21 @@ import "api/common/r.proto";
 
 /*配置相关*/
 option java_package = "io.github.pnoker.api.center.auth";
-option java_outer_classname = "BlackIpProto";
+option java_outer_classname = "LimitedIpProto";
 option objc_class_prefix = "Auth";
 option java_multiple_files = true;
 
 /*接口类*/
-service BlackIpApi {
-    rpc CheckBlackIpValid (GrpcIpQuery) returns (GrpcRBlackIpDTO);
+service LimitedIpApi {
+    rpc CheckLimitedIpValid (GrpcIpQuery) returns (GrpcRLimitedIpDTO);
 }
 
-// checkBlackIpValid Query
 message GrpcIpQuery {
     string ip = 1;
 }
 
-// R of BlackIp DTO
-message GrpcRBlackIpDTO {
-    api.common.GrpcRDTO result = 1; // 结果
+message GrpcRLimitedIpDTO {
+    /*结果*/
+    api.common.GrpcRDTO result = 1;
     bool data = 2; // 数据
 }

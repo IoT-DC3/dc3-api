@@ -39,7 +39,8 @@ message GrpcNameQuery {
 
 // R of UserLogin DTO
 message GrpcRUserLoginDTO {
-    api.common.GrpcRDTO result = 1; // 结果
+    /*结果*/
+    api.common.GrpcRDTO result = 1;
     GrpcUserLoginDTO data = 2; // 数据
 }
 

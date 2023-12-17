@@ -41,13 +41,15 @@ message GrpcByDeviceQueryDTO {
 
 // R of Driver DTO
 message GrpcRDriverDTO {
-    api.common.GrpcRDTO result = 1; // 结果
+    /*结果*/
+    api.common.GrpcRDTO result = 1;
     GrpcDriverDTO data = 2; // 数据
 }
 
 // R of Page Driver DTO
 message GrpcRPageDriverDTO {
-    api.common.GrpcRDTO result = 1; // 结果
+    /*结果*/
+    api.common.GrpcRDTO result = 1;
     GrpcPageDriverDTO data = 2; // 数据
 }
 

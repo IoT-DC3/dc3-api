@@ -39,7 +39,8 @@ message GrpcCodeQuery {
 
 // R of Tenant DTO
 message GrpcRTenantDTO {
-    api.common.GrpcRDTO result = 1; // 结果
+    /*结果*/
+    api.common.GrpcRDTO result = 1;
     GrpcTenantDTO data = 2; // 数据
 }
 
