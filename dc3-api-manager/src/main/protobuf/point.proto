@@ -33,29 +33,38 @@ service PointApi {
     rpc List (GrpcPagePointQueryDTO) returns (GrpcRPagePointDTO);
 }
 
-// R of Page Point DTO
+/*PagePoint*/
 message GrpcRPagePointDTO {
     /*结果*/
     api.common.GrpcRDTO result = 1;
-    GrpcPagePointDTO data = 2; // 数据
+
+    /*数据*/
+    GrpcPagePointDTO data = 2;
 }
 
-// Page Point Query DTO
+/*PagePointQuery*/
 message GrpcPagePointQueryDTO {
-    api.common.GrpcPageDTO page = 1; // 结果
-    int64 device_id = 2; // 设备ID
-    GrpcPointDTO point = 3; // point
+    /*结果*/
+    api.common.GrpcPageDTO page = 1;
+
+    /*设备ID*/
+    int64 device_id = 2;
+    GrpcPointDTO point = 3;
 }
 
-// Page Point DTO
+/*PagePoint*/
 message GrpcPagePointDTO {
-    api.common.GrpcPageDTO page = 1; // 结果
-    repeated GrpcPointDTO data = 2; // 数据
+    /*结果*/
+    api.common.GrpcPageDTO page = 1;
+
+    /*数据*/
+    repeated GrpcPointDTO data = 2;
 }
 
-// Point DTO
+/*Point*/
 message GrpcPointDTO {
-    api.common.GrpcBaseDTO base = 1; // 基础
+    /*基础*/
+    api.common.GrpcBaseDTO base = 1;
     string point_name = 2; // 位号名称
     string point_code = 3; // 位号编号
     int32 point_type_flag = 4; // 位号类型标识

@@ -46,7 +46,8 @@ message GrpcRUserDTO {
 
 // User DTO
 message GrpcUserDTO {
-    api.common.GrpcBaseDTO base = 1; // 基础
+    /*基础*/
+    api.common.GrpcBaseDTO base = 1;
     string nick_name = 2; // 用户昵称
     string user_name = 3; // 用户名称
     string phone = 4; // 手机号

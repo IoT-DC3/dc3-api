@@ -34,48 +34,59 @@ service DeviceApi {
     rpc SelectByProfileId (GrpcByProfileQueryDTO) returns (GrpcRDeviceListDTO);
 }
 
-//  By Profile Query DTO
+/*Profile Query*/
 message GrpcByProfileQueryDTO {
     int64 profile_id = 1; // 模板ID
 }
 
-// R of Device DTO
+/*Device*/
 message GrpcRDeviceDTO {
     /*结果*/
     api.common.GrpcRDTO result = 1;
-    DeviceDTO data = 2; // 数据
+
+    /*数据*/
+    DeviceDTO data = 2;
 }
 
-// R of Device DTO Array
+/*DeviceList*/
 message GrpcRDeviceListDTO {
     /*结果*/
     api.common.GrpcRDTO result = 1;
-    repeated DeviceDTO data = 2; // 数据
+
+    /*数据*/
+    repeated DeviceDTO data = 2;
 }
 
-// R of Page Device DTO
+/*PageDevice*/
 message GrpcRPageDeviceDTO {
     /*结果*/
     api.common.GrpcRDTO result = 1;
-    GrpcPageDeviceDTO data = 2; // 数据
+
+    /*数据*/
+    GrpcPageDeviceDTO data = 2;
 }
 
-// Page Device Query DTO
+/*PageDeviceQuery*/
 message GrpcPageDeviceQueryDTO {
-    api.common.GrpcPageDTO page = 1; // 结果
+    /*结果*/
+    api.common.GrpcPageDTO page = 1;
     int64 profile_id = 2; // 模板ID
     DeviceDTO device = 3; // device
 }
 
-// Page Device DTO
+/*PageDevice*/
 message GrpcPageDeviceDTO {
-    api.common.GrpcPageDTO page = 1; // 结果
-    repeated DeviceDTO data = 2; // 数据
+    /*结果*/
+    api.common.GrpcPageDTO page = 1;
+
+    /*数据*/
+    repeated DeviceDTO data = 2;
 }
 
-// Device DTO
+/*Device*/
 message DeviceDTO {
-    api.common.GrpcBaseDTO base = 1; // 基础
+    /*基础*/
+    api.common.GrpcBaseDTO base = 1;
     string device_name = 2; // 位号名称
     string device_code = 3; // 位号编号
     int64 driver_id = 4; // 驱动ID

@@ -16,39 +16,41 @@
 
 syntax = "proto3";
 
-package api.center.auth;
+package api.common.driver;
 
-import "api/common/base.proto";
 import "api/common/r.proto";
 
 /*配置相关*/
-option java_package = "io.github.pnoker.api.center.auth";
-option java_outer_classname = "TenantProto";
-option objc_class_prefix = "Auth";
+option java_package = "io.github.pnoker.api.common.driver";
+option java_outer_classname = "DriverProto";
+option objc_class_prefix = "Driver";
 option java_multiple_files = true;
 
 /*接口类*/
-service TenantApi {
-    rpc SelectByCode (GrpcCodeQuery) returns (GrpcRTenantDTO);
+service DriverApi {
+    rpc LastValue (GrpcPointValueQuery) returns (GrpcRPointValueDTO);
 }
 
-// selectByCode Query
-message GrpcCodeQuery {
-    string code = 1;
+message GrpcPointValueQuery {
+    int64 device_id = 1; // 设备ID
+    int64 tenant_id = 2; // 租户ID
+    int64 point_id = 3; //点位ID
 }
 
-// R of Tenant DTO
-message GrpcRTenantDTO {
+
+message GrpcRPointValueDTO {
     /*结果*/
     api.common.GrpcRDTO result = 1;
-    GrpcTenantDTO data = 2; // 数据
+    GrpcPointValueDTO data = 2; // 数据
 }
 
-// Tenant DTO
-message GrpcTenantDTO {
-    /*基础*/
-    api.common.GrpcBaseDTO base = 1;
-    string tenant_name = 2; // 租户名称
-    string tenant_code = 3; // 租户编号
-    int32 enable_flag = 4; // 使能标识
+
+message GrpcPointValueDTO {
+    int64 id = 1;
+    int64 device_id = 2;//设备ID
+    int64 point_id = 3;//位号ID
+    string value = 4;//处理值
+    string raw_value = 5;//原始值
+    int64 origin_time = 6;//采集时间
+    int64 create_time = 7;//入库时间
 }

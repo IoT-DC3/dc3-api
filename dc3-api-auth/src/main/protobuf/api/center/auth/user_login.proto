@@ -46,7 +46,8 @@ message GrpcRUserLoginDTO {
 
 // UserLogin DTO
 message GrpcUserLoginDTO {
-    api.common.GrpcBaseDTO base = 1; // 基础
+    /*基础*/
+    api.common.GrpcBaseDTO base = 1;
     string login_name = 2; // 登录名称
     int64 user_id = 3; // 用户ID
     int64 user_password_id = 4; // 用户密码ID

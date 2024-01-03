@@ -34,41 +34,52 @@ service DriverApi {
     rpc SelectByDeviceId (GrpcByDeviceQueryDTO) returns (GrpcRDriverDTO);
 }
 
-//  By Device Query DTO
+/*DeviceQuery*/
 message GrpcByDeviceQueryDTO {
     int64 device_id = 1; // 设备ID
 }
 
-// R of Driver DTO
+/*Driver*/
 message GrpcRDriverDTO {
     /*结果*/
     api.common.GrpcRDTO result = 1;
-    GrpcDriverDTO data = 2; // 数据
+
+    /*数据*/
+    GrpcDriverDTO data = 2;
 }
 
-// R of Page Driver DTO
+/*PageDriver*/
 message GrpcRPageDriverDTO {
     /*结果*/
     api.common.GrpcRDTO result = 1;
-    GrpcPageDriverDTO data = 2; // 数据
+
+    /*数据*/
+    GrpcPageDriverDTO data = 2;
 }
 
-// Page Driver DTO
+/*PageDriverQuery*/
 message GrpcPageDriverQueryDTO {
-    api.common.GrpcPageDTO page = 1; // 结果
+    /*结果*/
+    api.common.GrpcPageDTO page = 1;
     GrpcDriverDTO driver = 2; // driver
 }
 
-// Page Driver DTO
+/*PageDriver*/
 message GrpcPageDriverDTO {
-    api.common.GrpcPageDTO page = 1; // 结果
-    repeated GrpcDriverDTO data = 2; // 数据
+    /*结果*/
+    api.common.GrpcPageDTO page = 1;
+
+    /*数据*/
+    repeated GrpcDriverDTO data = 2;
 }
 
-// Driver DTO
+/*Driver*/
 message GrpcDriverDTO {
-    api.common.GrpcBaseDTO base = 1; // 基础
-    string driver_name = 2; // 驱动名称
+    /*基础*/
+    api.common.GrpcBaseDTO base = 1;
+
+    /*驱动名称*/
+    string driver_name = 2;
     string driver_code = 3; // 驱动编号
     string service_name = 4; // 驱动服务名称
     int32 driver_type_flag = 5; // 驱动类型标识
