@@ -50,5 +50,5 @@ message GrpcTenantDTO {
     api.common.GrpcBaseDTO base = 1;
     string tenant_name = 2; // 租户名称
     string tenant_code = 3; // 租户编号
-    int32 enable_flag = 4; // 使能标识
+    uint32 enable_flag = 4; // 使能标识
 }

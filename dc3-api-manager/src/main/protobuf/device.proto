@@ -91,6 +91,6 @@ message DeviceDTO {
     string device_code = 3; // 位号编号
     int64 driver_id = 4; // 驱动ID
     int64 group_id = 5; // 分组ID
-    int32 enable_flag = 6; // 使能标识
+    uint32 enable_flag = 6; // 使能标识
     int64 tenant_id = 7; // 租户ID
 }

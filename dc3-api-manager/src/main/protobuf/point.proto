@@ -67,15 +67,15 @@ message GrpcPointDTO {
     api.common.GrpcBaseDTO base = 1;
     string point_name = 2; // 位号名称
     string point_code = 3; // 位号编号
-    int32 point_type_flag = 4; // 位号类型标识
-    int32 rw_flag = 5; // 读写标识
+    uint32 point_type_flag = 4; // 位号类型标识
+    uint32 rw_flag = 5; // 读写标识
     double base_value = 6; // 基础值
     double multiple = 7; // 比例系数
     int32 value_decimal = 8; // 数据精度
     string unit = 9; // 单位
     int64 profile_id = 10; // 模板ID
     int64 group_id = 11; // 分组ID
-    int32 enable_flag = 12; // 使能标识
+    uint32 enable_flag = 12; // 使能标识
 
     /*租户ID*/
     int64 tenant_id = 13;

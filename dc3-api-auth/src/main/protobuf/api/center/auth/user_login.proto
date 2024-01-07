@@ -51,5 +51,5 @@ message GrpcUserLoginDTO {
     string login_name = 2; // 登录名称
     int64 user_id = 3; // 用户ID
     int64 user_password_id = 4; // 用户密码ID
-    int32 enable_flag = 5; // 使能标识
+    uint32 enable_flag = 5; // 使能标识
 }
