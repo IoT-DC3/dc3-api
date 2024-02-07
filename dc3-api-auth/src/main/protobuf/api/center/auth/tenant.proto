@@ -29,26 +29,26 @@ option java_multiple_files = true;
 
 /*接口类*/
 service TenantApi {
-    rpc SelectByCode (GrpcCodeQuery) returns (GrpcRTenantDTO);
+  rpc SelectByCode (GrpcCodeQuery) returns (GrpcRTenantDTO);
 }
 
 // selectByCode Query
 message GrpcCodeQuery {
-    string code = 1;
+  string code = 1;
 }
 
 // R of Tenant DTO
 message GrpcRTenantDTO {
-    /*结果*/
-    api.common.GrpcRDTO result = 1;
-    GrpcTenantDTO data = 2; // 数据
+  /*结果*/
+  api.common.GrpcRDTO result = 1;
+  GrpcTenantDTO data = 2; // 数据
 }
 
 // Tenant DTO
 message GrpcTenantDTO {
-    /*基础*/
-    api.common.GrpcBaseDTO base = 1;
-    string tenant_name = 2; // 租户名称
-    string tenant_code = 3; // 租户编号
-    uint32 enable_flag = 4; // 使能标识
+  /*基础*/
+  api.common.GrpcBaseDTO base = 1;
+  string tenant_name = 2; // 租户名称
+  string tenant_code = 3; // 租户编号
+  uint32 enable_flag = 4; // 使能标识
 }

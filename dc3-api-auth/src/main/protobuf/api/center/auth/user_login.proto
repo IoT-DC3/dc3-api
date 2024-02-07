@@ -29,27 +29,27 @@ option java_multiple_files = true;
 
 /*接口类*/
 service UserLoginApi {
-    rpc SelectByName (GrpcNameQuery) returns (GrpcRUserLoginDTO);
+  rpc SelectByName (GrpcNameQuery) returns (GrpcRUserLoginDTO);
 }
 
 // selectByName Query
 message GrpcNameQuery {
-    string name = 1;
+  string name = 1;
 }
 
 // R of UserLogin DTO
 message GrpcRUserLoginDTO {
-    /*结果*/
-    api.common.GrpcRDTO result = 1;
-    GrpcUserLoginDTO data = 2; // 数据
+  /*结果*/
+  api.common.GrpcRDTO result = 1;
+  GrpcUserLoginDTO data = 2; // 数据
 }
 
 // UserLogin DTO
 message GrpcUserLoginDTO {
-    /*基础*/
-    api.common.GrpcBaseDTO base = 1;
-    string login_name = 2; // 登录名称
-    int64 user_id = 3; // 用户ID
-    int64 user_password_id = 4; // 用户密码ID
-    uint32 enable_flag = 5; // 使能标识
+  /*基础*/
+  api.common.GrpcBaseDTO base = 1;
+  string login_name = 2; // 登录名称
+  int64 user_id = 3; // 用户ID
+  int64 user_password_id = 4; // 用户密码ID
+  uint32 enable_flag = 5; // 使能标识
 }

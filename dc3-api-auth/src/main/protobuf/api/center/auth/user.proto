@@ -29,29 +29,29 @@ option java_multiple_files = true;
 
 /*接口类*/
 service UserApi {
-    rpc SelectById (GrpcIdQuery) returns (GrpcRUserDTO);
+  rpc SelectById (GrpcIdQuery) returns (GrpcRUserDTO);
 }
 
 // selectById Query
 message GrpcIdQuery {
-    int64 id = 1;
+  int64 id = 1;
 }
 
 // R of User DTO
 message GrpcRUserDTO {
-    /*结果*/
-    api.common.GrpcRDTO result = 1;
-    GrpcUserDTO data = 2; // 数据
+  /*结果*/
+  api.common.GrpcRDTO result = 1;
+  GrpcUserDTO data = 2; // 数据
 }
 
 // User DTO
 message GrpcUserDTO {
-    /*基础*/
-    api.common.GrpcBaseDTO base = 1;
-    string nick_name = 2; // 用户昵称
-    string user_name = 3; // 用户名称
-    string phone = 4; // 手机号
-    string email = 5; // 邮箱
-    string social_ext = 6; // 社交相关拓展信息，加密存储
-    string identity_ext = 7; // 身份相关拓展信息，加密存储
+  /*基础*/
+  api.common.GrpcBaseDTO base = 1;
+  string nick_name = 2; // 用户昵称
+  string user_name = 3; // 用户名称
+  string phone = 4; // 手机号
+  string email = 5; // 邮箱
+  string social_ext = 6; // 社交相关拓展信息，加密存储
+  string identity_ext = 7; // 身份相关拓展信息，加密存储
 }

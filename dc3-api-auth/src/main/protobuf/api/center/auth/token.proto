@@ -28,21 +28,21 @@ option java_multiple_files = true;
 
 /*接口类*/
 service TokenApi {
-    rpc CheckTokenValid (GrpcLoginQuery) returns (GrpcRTokenDTO);
+  rpc CheckTokenValid (GrpcLoginQuery) returns (GrpcRTokenDTO);
 }
 
 // checkTokenValid Query
 message GrpcLoginQuery {
-    string tenant = 1; // 租户
-    string name = 2; // 登录名称
-    string salt = 3; // 盐值
-    string password = 4; // 登录密码
-    string token = 5; // 令牌
+  string tenant = 1; // 租户
+  string name = 2; // 登录名称
+  string salt = 3; // 盐值
+  string password = 4; // 登录密码
+  string token = 5; // 令牌
 }
 
 // R of Token DTO
 message GrpcRTokenDTO {
-    /*结果*/
-    api.common.GrpcRDTO result = 1;
-    string data = 2; // 数据
+  /*结果*/
+  api.common.GrpcRDTO result = 1;
+  string data = 2; // 数据
 }

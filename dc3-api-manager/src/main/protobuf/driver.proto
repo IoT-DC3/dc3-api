@@ -30,60 +30,60 @@ option java_multiple_files = true;
 
 /*接口类*/
 service DriverApi {
-    rpc List (GrpcPageDriverQueryDTO) returns (GrpcRPageDriverDTO);
-    rpc SelectByDeviceId (GrpcByDeviceQueryDTO) returns (GrpcRDriverDTO);
+  rpc List (GrpcPageDriverQueryDTO) returns (GrpcRPageDriverDTO);
+  rpc SelectByDeviceId (GrpcByDeviceQueryDTO) returns (GrpcRDriverDTO);
 }
 
 /*DeviceQuery*/
 message GrpcByDeviceQueryDTO {
-    int64 device_id = 1; // 设备ID
+  int64 device_id = 1; // 设备ID
 }
 
 /*Driver*/
 message GrpcRDriverDTO {
-    /*结果*/
-    api.common.GrpcRDTO result = 1;
+  /*结果*/
+  api.common.GrpcRDTO result = 1;
 
-    /*数据*/
-    GrpcDriverDTO data = 2;
+  /*数据*/
+  GrpcDriverDTO data = 2;
 }
 
 /*PageDriver*/
 message GrpcRPageDriverDTO {
-    /*结果*/
-    api.common.GrpcRDTO result = 1;
+  /*结果*/
+  api.common.GrpcRDTO result = 1;
 
-    /*数据*/
-    GrpcPageDriverDTO data = 2;
+  /*数据*/
+  GrpcPageDriverDTO data = 2;
 }
 
 /*PageDriverQuery*/
 message GrpcPageDriverQueryDTO {
-    /*结果*/
-    api.common.GrpcPageDTO page = 1;
-    GrpcDriverDTO driver = 2; // driver
+  /*结果*/
+  api.common.GrpcPageDTO page = 1;
+  GrpcDriverDTO driver = 2; // driver
 }
 
 /*PageDriver*/
 message GrpcPageDriverDTO {
-    /*结果*/
-    api.common.GrpcPageDTO page = 1;
+  /*结果*/
+  api.common.GrpcPageDTO page = 1;
 
-    /*数据*/
-    repeated GrpcDriverDTO data = 2;
+  /*数据*/
+  repeated GrpcDriverDTO data = 2;
 }
 
 /*Driver*/
 message GrpcDriverDTO {
-    /*基础*/
-    api.common.GrpcBaseDTO base = 1;
+  /*基础*/
+  api.common.GrpcBaseDTO base = 1;
 
-    /*驱动名称*/
-    string driver_name = 2;
-    string driver_code = 3; // 驱动编号
-    string service_name = 4; // 驱动服务名称
-    uint32 driver_type_flag = 5; // 驱动类型标识
-    string service_host = 6; // 服务主机
-    uint32 enable_flag = 7; // 使能标识
-    int64 tenant_id = 8; // 租户ID
+  /*驱动名称*/
+  string driver_name = 2;
+  string driver_code = 3; // 驱动编号
+  string service_name = 4; // 驱动服务名称
+  uint32 driver_type_flag = 5; // 驱动类型标识
+  string service_host = 6; // 服务主机
+  uint32 enable_flag = 7; // 使能标识
+  int64 tenant_id = 8; // 租户ID
 }

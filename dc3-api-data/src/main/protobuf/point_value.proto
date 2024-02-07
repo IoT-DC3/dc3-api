@@ -28,29 +28,29 @@ option java_multiple_files = true;
 
 /*接口类*/
 service PointValueApi {
-    rpc LastValue (GrpcPointValueQuery) returns (GrpcRPointValueDTO);
+  rpc LastValue (GrpcPointValueQuery) returns (GrpcRPointValueDTO);
 }
 
 message GrpcPointValueQuery {
-    int64 device_id = 1; // 设备ID
-    int64 tenant_id = 2; // 租户ID
-    int64 point_id = 3; //点位ID
+  int64 device_id = 1; // 设备ID
+  int64 tenant_id = 2; // 租户ID
+  int64 point_id = 3; //点位ID
 }
 
 
 message GrpcRPointValueDTO {
-    /*结果*/
-    api.common.GrpcRDTO result = 1;
-    GrpcPointValueDTO data = 2; // 数据
+  /*结果*/
+  api.common.GrpcRDTO result = 1;
+  GrpcPointValueDTO data = 2; // 数据
 }
 
 
 message GrpcPointValueDTO {
-    int64 id = 1;
-    int64 device_id = 2;//设备ID
-    int64 point_id = 3;//位号ID
-    string value = 4;//处理值
-    string raw_value = 5;//原始值
-    int64 origin_time = 6;//采集时间
-    int64 create_time = 7;//入库时间
+  int64 id = 1;
+  int64 device_id = 2;//设备ID
+  int64 point_id = 3;//位号ID
+  string value = 4;//处理值
+  string raw_value = 5;//原始值
+  int64 origin_time = 6;//采集时间
+  int64 create_time = 7;//入库时间
 }

@@ -28,15 +28,15 @@ option java_multiple_files = true;
 
 /*接口类*/
 service LimitedIpApi {
-    rpc CheckLimitedIpValid (GrpcIpQuery) returns (GrpcRLimitedIpDTO);
+  rpc CheckLimitedIpValid (GrpcIpQuery) returns (GrpcRLimitedIpDTO);
 }
 
 message GrpcIpQuery {
-    string ip = 1;
+  string ip = 1;
 }
 
 message GrpcRLimitedIpDTO {
-    /*结果*/
-    api.common.GrpcRDTO result = 1;
-    bool data = 2; // 数据
+  /*结果*/
+  api.common.GrpcRDTO result = 1;
+  bool data = 2; // 数据
 }
