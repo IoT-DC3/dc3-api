@@ -32,11 +32,16 @@ option java_multiple_files = true;
 service DriverApi {
   rpc List (GrpcPageDriverQueryDTO) returns (GrpcRPageDriverDTO);
   rpc SelectByDeviceId (GrpcByDeviceQueryDTO) returns (GrpcRDriverDTO);
+  rpc SelectByDriverId (GrpcByDriverQueryDTO) returns (GrpcRDriverDTO);
 }
 
 /*DeviceQuery*/
 message GrpcByDeviceQueryDTO {
   int64 device_id = 1; // 设备ID
+}
+
+message GrpcByDriverQueryDTO {
+  int64 driver_id = 1; // 驱动ID
 }
 
 /*Driver*/

@@ -33,12 +33,18 @@ service DeviceApi {
   rpc List (GrpcPageDeviceQueryDTO) returns (GrpcRPageDeviceDTO);
   rpc SelectByProfileId (GrpcByProfileQueryDTO) returns (GrpcRDeviceListDTO);
   rpc getDeviceOnlineByDriverId (GrpcBYOnlineDriver) returns (GrpcBYOnlineDriverDTO);
+  rpc selectByDeviceId (GrpcByDeviceDTO) returns (GrpcRDeviceDTO);
 }
 
 /*Profile Query*/
 message GrpcByProfileQueryDTO {
   int64 profile_id = 1; // 模板ID
 }
+
+message GrpcByDeviceDTO {
+  int64 device_id = 1; // 设备ID
+}
+
 /* getDeviceOnlineByDriverId*/
  message   GrpcBYOnlineDriver{
   int64  driver_id=1;//驱动id
