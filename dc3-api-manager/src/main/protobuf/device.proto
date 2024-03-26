@@ -46,12 +46,12 @@ message GrpcByDeviceDTO {
 }
 
 /* getDeviceOnlineByDriverId*/
- message   GrpcBYOnlineDriver{
-  int64  driver_id=1;//驱动id
- }
+message   GrpcBYOnlineDriver{
+  int64  driver_id = 1;//驱动id
+}
 message   GrpcBYOnlineDriverDTO{
   api.common.GrpcRDTO result = 1;
-  repeated  DeviceDTO data =2;
+  repeated  DeviceDTO data = 2;
 }
 /*Device*/
 message GrpcRDeviceDTO {
