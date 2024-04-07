@@ -21,13 +21,17 @@ package api.center.auth;
 import "api/common/base.proto";
 import "api/common/r.proto";
 
-/*配置相关*/
+/*
+Config
+*/
 option java_package = "io.github.pnoker.api.center.auth";
 option java_outer_classname = "UserLoginProto";
 option objc_class_prefix = "Auth";
 option java_multiple_files = true;
 
-/*接口类*/
+/*
+Api
+*/
 service UserLoginApi {
   rpc SelectByName (GrpcNameQuery) returns (GrpcRUserLoginDTO);
 }
@@ -39,15 +43,24 @@ message GrpcNameQuery {
 
 // R of UserLogin DTO
 message GrpcRUserLoginDTO {
-  /*结果*/
-  api.common.GrpcRDTO result = 1;
-  GrpcUserLoginDTO data = 2; // 数据
+  /*
+  R
+  */
+  api.common.GrpcR result = 1;
+
+  /*
+  Data
+  */
+  GrpcUserLoginDTO data = 2;
 }
 
 // UserLogin DTO
 message GrpcUserLoginDTO {
-  /*基础*/
-  api.common.GrpcBaseDTO base = 1;
+  /*
+  Base
+  */
+  api.common.GrpcBase base = 1;
+
   string login_name = 2; // 登录名称
   int64 user_id = 3; // 用户ID
   int64 user_password_id = 4; // 用户密码ID

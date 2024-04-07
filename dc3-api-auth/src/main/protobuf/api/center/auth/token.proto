@@ -20,18 +20,22 @@ package api.center.auth;
 
 import "api/common/r.proto";
 
-/*配置相关*/
+/*
+Config
+*/
 option java_package = "io.github.pnoker.api.center.auth";
 option java_outer_classname = "TokenProto";
 option objc_class_prefix = "Auth";
 option java_multiple_files = true;
 
-/*接口类*/
+/*
+Api
+*/
 service TokenApi {
-  rpc CheckTokenValid (GrpcLoginQuery) returns (GrpcRTokenDTO);
+  rpc CheckValid (GrpcLoginQuery) returns (GrpcRTokenDTO);
 }
 
-// checkTokenValid Query
+// checkValid Query
 message GrpcLoginQuery {
   string tenant = 1; // 租户
   string name = 2; // 登录名称
@@ -42,7 +46,11 @@ message GrpcLoginQuery {
 
 // R of Token DTO
 message GrpcRTokenDTO {
-  /*结果*/
-  api.common.GrpcRDTO result = 1;
-  string data = 2; // 数据
+  /*
+  R
+  */
+  api.common.GrpcR result = 1;
+
+  /*数据，返回过期时间*/
+  string data = 2;
 }

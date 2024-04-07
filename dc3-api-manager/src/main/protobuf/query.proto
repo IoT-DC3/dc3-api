@@ -16,37 +16,59 @@
 
 syntax = "proto3";
 
-package api.center.auth;
+package api.center.manager;
 
+import "api/common/base.proto";
+import "api/common/page.proto";
 import "api/common/r.proto";
 
 /*
 Config
 */
-option java_package = "io.github.pnoker.api.center.auth";
-option java_outer_classname = "LimitedIpProto";
-option objc_class_prefix = "Auth";
+option java_package = "io.github.pnoker.api.center.manager";
+option java_outer_classname = "QueryProto";
+option objc_class_prefix = "Query";
 option java_multiple_files = true;
 
 /*
-Api
+Driver ID Query
 */
-service LimitedIpApi {
-  rpc CheckValid (GrpcIpQuery) returns (GrpcRLimitedIpDTO);
-}
-
-message GrpcIpQuery {
-  string ip = 1;
-}
-
-message GrpcRLimitedIpDTO {
+message GrpcDriverQuery {
   /*
-  R
+  Driver ID
   */
-  api.common.GrpcR result = 1;
-
-  /*
-  Data
-  */
-  bool data = 2;
+  int64 driver_id = 1;
 }
+
+/*
+Profile ID Query
+*/
+message GrpcProfileQuery {
+  /*
+  Profile ID
+  */
+  int64 profile_id = 1;
+}
+
+/*
+Point ID Query
+*/
+message GrpcPointQuery {
+  /*
+  Point ID
+  */
+  int64 point_id = 1;
+}
+
+/*
+Device ID Query
+*/
+message GrpcDeviceQuery {
+  /*
+  Device ID
+  */
+  int64 device_id = 1;
+}
+
+
+

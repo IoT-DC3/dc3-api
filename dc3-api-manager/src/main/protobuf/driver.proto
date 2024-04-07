@@ -21,74 +21,69 @@ package api.center.manager;
 import "api/common/base.proto";
 import "api/common/page.proto";
 import "api/common/r.proto";
+import "device.proto";
+import "entity.proto";
+import "query.proto";
+import "query_page.proto";
 
-/*配置相关*/
+/*
+Config
+*/
 option java_package = "io.github.pnoker.api.center.manager";
 option java_outer_classname = "DriverProto";
 option objc_class_prefix = "Manager";
 option java_multiple_files = true;
 
-/*接口类*/
+/*
+Api
+*/
 service DriverApi {
-  rpc List (GrpcPageDriverQueryDTO) returns (GrpcRPageDriverDTO);
-  rpc SelectByDeviceId (GrpcByDeviceQueryDTO) returns (GrpcRDriverDTO);
-  rpc SelectByDriverId (GrpcByDriverQueryDTO) returns (GrpcRDriverDTO);
+  rpc List (GrpcPageDriverQuery) returns (GrpcRPageDriverDTO);
+  rpc SelectByDriverId (GrpcDriverQuery) returns (GrpcRDriverDTO);
+  rpc SelectByDeviceId (GrpcDeviceQuery) returns (GrpcRDriverDTO);
 }
 
-/*DeviceQuery*/
-message GrpcByDeviceQueryDTO {
-  int64 device_id = 1; // 设备ID
-}
-
-message GrpcByDriverQueryDTO {
-  int64 driver_id = 1; // 驱动ID
-}
-
-/*Driver*/
-message GrpcRDriverDTO {
-  /*结果*/
-  api.common.GrpcRDTO result = 1;
-
-  /*数据*/
-  GrpcDriverDTO data = 2;
-}
-
-/*PageDriver*/
+/*
+Driver R Page
+*/
 message GrpcRPageDriverDTO {
-  /*结果*/
-  api.common.GrpcRDTO result = 1;
+  /*
+  R
+  */
+  api.common.GrpcR result = 1;
 
-  /*数据*/
+  /*
+  Data
+  */
   GrpcPageDriverDTO data = 2;
 }
 
-/*PageDriverQuery*/
-message GrpcPageDriverQueryDTO {
-  /*结果*/
-  api.common.GrpcPageDTO page = 1;
-  GrpcDriverDTO driver = 2; // driver
-}
-
-/*PageDriver*/
+/*
+Driver Page
+*/
 message GrpcPageDriverDTO {
-  /*结果*/
-  api.common.GrpcPageDTO page = 1;
+  /*
+  Page
+  */
+  api.common.GrpcPage page = 1;
 
-  /*数据*/
+  /*
+  Data
+  */
   repeated GrpcDriverDTO data = 2;
 }
 
-/*Driver*/
-message GrpcDriverDTO {
-  /*基础*/
-  api.common.GrpcBaseDTO base = 1;
+/*
+Driver R
+*/
+message GrpcRDriverDTO {
+  /*
+  R
+  */
+  api.common.GrpcR result = 1;
 
-  /*驱动名称*/
-  string driver_name = 2;
-  string driver_code = 3; // 驱动编号
-  string service_name = 4; // 驱动服务名称
-  uint32 driver_type_flag = 5; // 驱动类型标识
-  string service_host = 6; // 服务主机
-  uint32 enable_flag = 7; // 使能标识
-  int64 tenant_id = 8; // 租户ID
+  /*
+  Data
+  */
+  GrpcDriverDTO data = 2;
 }

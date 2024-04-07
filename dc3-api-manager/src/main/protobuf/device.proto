@@ -21,90 +21,84 @@ package api.center.manager;
 import "api/common/base.proto";
 import "api/common/page.proto";
 import "api/common/r.proto";
+import "entity.proto";
+import "query.proto";
+import "query_page.proto";
 
-/*配置相关*/
+/*
+Config
+*/
 option java_package = "io.github.pnoker.api.center.manager";
 option java_outer_classname = "DeviceProto";
 option objc_class_prefix = "Manager";
 option java_multiple_files = true;
 
-/*接口类*/
+/*
+Api
+*/
 service DeviceApi {
-  rpc List (GrpcPageDeviceQueryDTO) returns (GrpcRPageDeviceDTO);
-  rpc SelectByProfileId (GrpcByProfileQueryDTO) returns (GrpcRDeviceListDTO);
-  rpc getDeviceOnlineByDriverId (GrpcBYOnlineDriver) returns (GrpcBYOnlineDriverDTO);
-  rpc selectByDeviceId (GrpcByDeviceDTO) returns (GrpcRDeviceDTO);
+  rpc List (GrpcPageDeviceQuery) returns (GrpcRPageDeviceDTO);
+  rpc SelectByProfileId (GrpcProfileQuery) returns (GrpcRDeviceListDTO);
+  rpc SelectByDriverId (GrpcDriverQuery) returns (GrpcRDeviceListDTO);
+  rpc SelectByDeviceId (GrpcDeviceQuery) returns (GrpcRDeviceDTO);
 }
 
-/*Profile Query*/
-message GrpcByProfileQueryDTO {
-  int64 profile_id = 1; // 模板ID
-}
-
-message GrpcByDeviceDTO {
-  int64 device_id = 1; // 设备ID
-}
-
-/* getDeviceOnlineByDriverId*/
-message   GrpcBYOnlineDriver{
-  int64  driver_id = 1;//驱动id
-}
-message   GrpcBYOnlineDriverDTO{
-  api.common.GrpcRDTO result = 1;
-  repeated  DeviceDTO data = 2;
-}
-/*Device*/
-message GrpcRDeviceDTO {
-  /*结果*/
-  api.common.GrpcRDTO result = 1;
-
-  /*数据*/
-  DeviceDTO data = 2;
-}
-
-/*DeviceList*/
-message GrpcRDeviceListDTO {
-  /*结果*/
-  api.common.GrpcRDTO result = 1;
-
-  /*数据*/
-  repeated DeviceDTO data = 2;
-}
-
-/*PageDevice*/
+/*
+Device R Page
+*/
 message GrpcRPageDeviceDTO {
-  /*结果*/
-  api.common.GrpcRDTO result = 1;
+  /*
+  R
+  */
+  api.common.GrpcR result = 1;
 
-  /*数据*/
+  /*
+  Data
+  */
   GrpcPageDeviceDTO data = 2;
 }
 
-/*PageDeviceQuery*/
-message GrpcPageDeviceQueryDTO {
-  /*结果*/
-  api.common.GrpcPageDTO page = 1;
-  int64 profile_id = 2; // 模板ID
-  DeviceDTO device = 3; // device
-}
-
-/*PageDevice*/
+/*
+Device Page
+*/
 message GrpcPageDeviceDTO {
-  /*结果*/
-  api.common.GrpcPageDTO page = 1;
+  /*
+  Page
+  */
+  api.common.GrpcPage page = 1;
 
-  /*数据*/
-  repeated DeviceDTO data = 2;
+  /*
+  Data
+  */
+  repeated GrpcDeviceDTO data = 2;
 }
 
-/*Device*/
-message DeviceDTO {
-  /*基础*/
-  api.common.GrpcBaseDTO base = 1;
-  string device_name = 2; // 位号名称
-  string device_code = 3; // 位号编号
-  int64 driver_id = 4; // 驱动ID
-  int64 group_id = 5; // 分组ID
-  uint32 enable_flag = 6; // 使能标识
-  int64 tenant_id = 7; // 租户ID
+/*
+Device R Array
+*/
+message GrpcRDeviceListDTO {
+  /*
+  R
+  */
+  api.common.GrpcR result = 1;
+
+  /*
+  Data
+  */
+  repeated GrpcDeviceDTO data = 2;
+}
+
+/*
+Device R
+*/
+message GrpcRDeviceDTO {
+  /*
+  R
+  */
+  api.common.GrpcR result = 1;
+
+  /*
+  Data
+  */
+  GrpcDeviceDTO data = 2;
 }

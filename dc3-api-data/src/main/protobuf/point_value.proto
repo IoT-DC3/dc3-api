@@ -20,28 +20,42 @@ package api.center.data;
 
 import "api/common/r.proto";
 
-/*配置相关*/
+/*
+Config
+*/
 option java_package = "io.github.pnoker.api.center.data";
 option java_outer_classname = "PointValueProto";
 option objc_class_prefix = "Data";
 option java_multiple_files = true;
 
-/*接口类*/
+/*
+Api
+*/
 service PointValueApi {
   rpc LastValue (GrpcPointValueQuery) returns (GrpcRPointValueDTO);
 }
 
 message GrpcPointValueQuery {
   int64 device_id = 1; // 设备ID
-  int64 tenant_id = 2; // 租户ID
-  int64 point_id = 3; //点位ID
+  int64 point_id = 2; //点位ID
+
+  /*
+  Tenant ID
+  */
+  int64 tenant_id = 3;
 }
 
 
 message GrpcRPointValueDTO {
-  /*结果*/
-  api.common.GrpcRDTO result = 1;
-  GrpcPointValueDTO data = 2; // 数据
+  /*
+  R
+  */
+  api.common.GrpcR result = 1;
+
+  /*
+  Data
+  */
+  GrpcPointValueDTO data = 2;
 }
 
 
