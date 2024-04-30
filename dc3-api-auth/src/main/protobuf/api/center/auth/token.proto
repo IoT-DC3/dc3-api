@@ -51,6 +51,6 @@ message GrpcRTokenDTO {
   */
   api.common.GrpcR result = 1;
 
-  /*数据，返回过期时间*/
+  /*数据, 返回过期时间*/
   string data = 2;
 }

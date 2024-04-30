@@ -65,6 +65,6 @@ message GrpcUserDTO {
   string user_name = 3; // 用户名称
   string phone = 4; // 手机号
   string email = 5; // 邮箱
-  string social_ext = 6; // 社交相关拓展信息，加密存储
-  string identity_ext = 7; // 身份相关拓展信息，加密存储
+  string social_ext = 6; // 社交相关拓展信息, 加密存储
+  string identity_ext = 7; // 身份相关拓展信息, 加密存储
 }
