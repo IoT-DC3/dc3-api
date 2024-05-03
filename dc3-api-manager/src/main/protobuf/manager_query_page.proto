@@ -16,18 +16,16 @@
 
 syntax = "proto3";
 
-package api.center.manager;
+package api.common.manager;
 
-import "api/common/base.proto";
 import "api/common/page.proto";
-import "api/common/r.proto";
 
 /*
 Config
 */
 option java_package = "io.github.pnoker.api.center.manager";
 option java_outer_classname = "QueryPageProto";
-option objc_class_prefix = "QueryPage";
+option objc_class_prefix = "Manager";
 option java_multiple_files = true;
 
 /*PageDriverQuery*/
@@ -35,7 +33,7 @@ message GrpcPageDriverQuery {
   /*
   Page
   */
-  api.common.GrpcPage page = 1;
+  GrpcPage page = 1;
 
   /*
   Tenant ID
@@ -48,10 +46,10 @@ message GrpcPageDriverQuery {
   string driver_name = 3;
   string driver_code = 4; // 驱动编号
   string service_name = 5; // 驱动服务名称
-  uint32 driver_type_flag = 6; // 驱动类型标识
-  string service_host = 7; // 服务主机
-  uint32 enable_flag = 8; // 使能标识
-  string version = 9; // 版本
+  string service_host = 6; // 服务主机
+  int32 driver_type_flag = 7; // 驱动类型标识
+  int32 enable_flag = 8; // 使能标识
+  int32 version = 9; // 版本
 }
 
 /*PagePointQuery*/
@@ -59,7 +57,7 @@ message GrpcPagePointQuery {
   /*
   Page
   */
-  api.common.GrpcPage page = 1;
+  GrpcPage page = 1;
 
   /*
   Tenant ID
@@ -71,12 +69,12 @@ message GrpcPagePointQuery {
    */
   string point_name = 3; // 位号名称
   string point_code = 4; // 位号编号
-  uint32 point_type_flag = 5; // 位号类型标识
-  uint32 rw_flag = 6; // 读写标识
+  int32 point_type_flag = 5; // 位号类型标识
+  int32 rw_flag = 6; // 读写标识
   int64 profile_id = 7; // 模板ID
   int64 group_id = 8; // 分组ID
-  uint32 enable_flag = 9; // 使能标识
-  string version = 10; // 版本
+  int32 enable_flag = 9; // 使能标识
+  int32 version = 10; // 版本
 
   /*
   附加字段
@@ -91,7 +89,7 @@ message GrpcPageDeviceQuery {
   /*
   Page
   */
-  api.common.GrpcPage page = 1;
+  GrpcPage page = 1;
 
   /*
   Tenant ID
@@ -105,8 +103,8 @@ message GrpcPageDeviceQuery {
   string device_code = 4; // 位号编号
   int64 driver_id = 5; // 驱动ID
   int64 group_id = 6; // 分组ID
-  uint32 enable_flag = 7; // 使能标识
-  string version = 8; // 版本
+  int32 enable_flag = 7; // 使能标识
+  int32 version = 8; // 版本
 
   /*
   附加字段

@@ -16,56 +16,55 @@
 
 syntax = "proto3";
 
-package api.center.manager;
-
-import "api/common/base.proto";
-import "api/common/page.proto";
-import "api/common/r.proto";
-import "entity.proto";
-import "query_page.proto";
+package api.common.manager;
 
 /*
 Config
 */
 option java_package = "io.github.pnoker.api.center.manager";
-option java_outer_classname = "PointProto";
+option java_outer_classname = "QueryProto";
 option objc_class_prefix = "Manager";
 option java_multiple_files = true;
 
 /*
-Api
+Driver ID Query
 */
-service PointApi {
-  rpc List (GrpcPagePointQuery) returns (GrpcRPagePointDTO);
+message GrpcDriverQuery {
+  /*
+  Driver ID
+  */
+  int64 driver_id = 1;
 }
 
 /*
-Point R Page
+Profile ID Query
 */
-message GrpcRPagePointDTO {
+message GrpcProfileQuery {
   /*
-  R
+  Profile ID
   */
-  api.common.GrpcR result = 1;
-
-  /*
-  Data
-  */
-  GrpcPagePointDTO data = 2;
+  int64 profile_id = 1;
 }
 
 /*
-Point Page
+Point ID Query
 */
-message GrpcPagePointDTO {
+message GrpcPointQuery {
   /*
-  Page
+  Point ID
   */
-  api.common.GrpcPage page = 1;
-
-  /*
-  Data
-  */
-  repeated GrpcPointDTO data = 2;
+  int64 point_id = 1;
 }
+
+/*
+Device ID Query
+*/
+message GrpcDeviceQuery {
+  /*
+  Device ID
+  */
+  int64 device_id = 1;
+}
+
+
 

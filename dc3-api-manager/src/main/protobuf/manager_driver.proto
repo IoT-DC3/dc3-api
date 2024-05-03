@@ -16,89 +16,72 @@
 
 syntax = "proto3";
 
-package api.center.manager;
+package api.common.manager;
 
-import "api/common/base.proto";
-import "api/common/page.proto";
 import "api/common/r.proto";
-import "entity.proto";
-import "query.proto";
-import "query_page.proto";
+import "api/common/page.proto";
+import "api/common/entity.proto";
+import "manager_query.proto";
+import "manager_query_page.proto";
 
 /*
 Config
 */
 option java_package = "io.github.pnoker.api.center.manager";
-option java_outer_classname = "DeviceProto";
+option java_outer_classname = "DriverProto";
 option objc_class_prefix = "Manager";
 option java_multiple_files = true;
 
 /*
 Api
 */
-service DeviceApi {
-  rpc List (GrpcPageDeviceQuery) returns (GrpcRPageDeviceDTO);
-  rpc SelectByProfileId (GrpcProfileQuery) returns (GrpcRDeviceListDTO);
-  rpc SelectByDriverId (GrpcDriverQuery) returns (GrpcRDeviceListDTO);
-  rpc SelectByDeviceId (GrpcDeviceQuery) returns (GrpcRDeviceDTO);
+service DriverApi {
+  rpc List (GrpcPageDriverQuery) returns (GrpcRPageDriverDTO);
+  rpc SelectByDriverId (GrpcDriverQuery) returns (GrpcRDriverDTO);
+  rpc SelectByDeviceId (GrpcDeviceQuery) returns (GrpcRDriverDTO);
 }
 
 /*
-Device R Page
+Driver R Page
 */
-message GrpcRPageDeviceDTO {
+message GrpcRPageDriverDTO {
   /*
   R
   */
-  api.common.GrpcR result = 1;
+  GrpcR result = 1;
 
   /*
   Data
   */
-  GrpcPageDeviceDTO data = 2;
+  GrpcPageDriverDTO data = 2;
 }
 
 /*
-Device Page
+Driver Page
 */
-message GrpcPageDeviceDTO {
+message GrpcPageDriverDTO {
   /*
   Page
   */
-  api.common.GrpcPage page = 1;
+  GrpcPage page = 1;
 
   /*
   Data
   */
-  repeated GrpcDeviceDTO data = 2;
+  repeated GrpcDriverDTO data = 2;
 }
 
 /*
-Device R Array
+Driver R
 */
-message GrpcRDeviceListDTO {
+message GrpcRDriverDTO {
   /*
   R
   */
-  api.common.GrpcR result = 1;
+  GrpcR result = 1;
 
   /*
   Data
   */
-  repeated GrpcDeviceDTO data = 2;
-}
-
-/*
-Device R
-*/
-message GrpcRDeviceDTO {
-  /*
-  R
-  */
-  api.common.GrpcR result = 1;
-
-  /*
-  Data
-  */
-  GrpcDeviceDTO data = 2;
+  GrpcDriverDTO data = 2;
 }

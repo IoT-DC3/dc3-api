@@ -16,74 +16,88 @@
 
 syntax = "proto3";
 
-package api.center.manager;
+package api.common.manager;
 
-import "api/common/base.proto";
 import "api/common/page.proto";
 import "api/common/r.proto";
-import "device.proto";
-import "entity.proto";
-import "query.proto";
-import "query_page.proto";
+import "api/common/entity.proto";
+import "manager_query.proto";
+import "manager_query_page.proto";
 
 /*
 Config
 */
 option java_package = "io.github.pnoker.api.center.manager";
-option java_outer_classname = "DriverProto";
+option java_outer_classname = "DeviceProto";
 option objc_class_prefix = "Manager";
 option java_multiple_files = true;
 
 /*
 Api
 */
-service DriverApi {
-  rpc List (GrpcPageDriverQuery) returns (GrpcRPageDriverDTO);
-  rpc SelectByDriverId (GrpcDriverQuery) returns (GrpcRDriverDTO);
-  rpc SelectByDeviceId (GrpcDeviceQuery) returns (GrpcRDriverDTO);
+service DeviceApi {
+  rpc List (GrpcPageDeviceQuery) returns (GrpcRPageDeviceDTO);
+  rpc SelectByProfileId (GrpcProfileQuery) returns (GrpcRDeviceListDTO);
+  rpc SelectByDriverId (GrpcDriverQuery) returns (GrpcRDeviceListDTO);
+  rpc SelectByDeviceId (GrpcDeviceQuery) returns (GrpcRDeviceDTO);
 }
 
 /*
-Driver R Page
+Device R Page
 */
-message GrpcRPageDriverDTO {
+message GrpcRPageDeviceDTO {
   /*
   R
   */
-  api.common.GrpcR result = 1;
+  GrpcR result = 1;
 
   /*
   Data
   */
-  GrpcPageDriverDTO data = 2;
+  GrpcPageDeviceDTO data = 2;
 }
 
 /*
-Driver Page
+Device Page
 */
-message GrpcPageDriverDTO {
+message GrpcPageDeviceDTO {
   /*
   Page
   */
-  api.common.GrpcPage page = 1;
+  GrpcPage page = 1;
 
   /*
   Data
   */
-  repeated GrpcDriverDTO data = 2;
+  repeated GrpcDeviceDTO data = 2;
 }
 
 /*
-Driver R
+Device R Array
 */
-message GrpcRDriverDTO {
+message GrpcRDeviceListDTO {
   /*
   R
   */
-  api.common.GrpcR result = 1;
+  GrpcR result = 1;
 
   /*
   Data
   */
-  GrpcDriverDTO data = 2;
+  repeated GrpcDeviceDTO data = 2;
+}
+
+/*
+Device R
+*/
+message GrpcRDeviceDTO {
+  /*
+  R
+  */
+  GrpcR result = 1;
+
+  /*
+  Data
+  */
+  GrpcDeviceDTO data = 2;
 }

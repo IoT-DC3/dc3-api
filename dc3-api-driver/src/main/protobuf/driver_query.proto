@@ -16,52 +16,59 @@
 
 syntax = "proto3";
 
-package api.common.auth;
-
-import "api/common/base.proto";
-import "api/common/r.proto";
+package api.common.driver;
 
 /*
 Config
 */
-option java_package = "io.github.pnoker.api.center.auth";
-option java_outer_classname = "TenantProto";
-option objc_class_prefix = "Auth";
+option java_package = "io.github.pnoker.api.common.driver";
+option java_outer_classname = "QueryProto";
+option objc_class_prefix = "Driver";
 option java_multiple_files = true;
 
 /*
-Api
+Driver ID Query
 */
-service TenantApi {
-  rpc SelectByCode (GrpcCodeQuery) returns (GrpcRTenantDTO);
-}
-
-// SelectByCode Query
-message GrpcCodeQuery {
-  string code = 1;
-}
-
-// R of Tenant DTO
-message GrpcRTenantDTO {
+message GrpcDriverQuery {
   /*
-  R
+  Driver ID
   */
-  GrpcR result = 1;
-
-  /*
-  Data
-  */
-  GrpcTenantDTO data = 2;
+  int64 driver_id = 1;
 }
 
-// Tenant DTO
-message GrpcTenantDTO {
+/*
+Device ID And Driver ID Query
+*/
+message GrpcDeviceQuery {
   /*
-  Base
+  Driver ID
   */
-  GrpcBase base = 1;
+  int64 driver_id = 1;
 
-  string tenant_name = 2; // 租户名称
-  string tenant_code = 3; // 租户编号
-  int32 enable_flag = 4; // 使能标识
+  /*
+  Device ID
+  */
+  int64 device_id = 2;
 }
+
+/*
+Device ID And Driver ID And Point ID Query
+*/
+message GrpcPointQuery {
+  /*
+  Driver ID
+  */
+  int64 driver_id = 1;
+
+  /*
+  Device ID
+  */
+  int64 device_id = 2;
+  /*
+  Point ID
+  */
+  int64 point_id = 3;
+}
+
+
+

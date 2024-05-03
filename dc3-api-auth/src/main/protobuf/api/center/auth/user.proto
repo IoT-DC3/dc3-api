@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-package api.center.auth;
+package api.common.auth;
 
 import "api/common/base.proto";
 import "api/common/r.proto";
@@ -46,7 +46,7 @@ message GrpcRUserDTO {
   /*
   R
   */
-  api.common.GrpcR result = 1;
+  GrpcR result = 1;
 
   /*
   Data
@@ -59,7 +59,7 @@ message GrpcUserDTO {
   /*
   Base
   */
-  api.common.GrpcBase base = 1;
+  GrpcBase base = 1;
 
   string nick_name = 2; // 用户昵称
   string user_name = 3; // 用户名称

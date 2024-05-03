@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-package api.center.auth;
+package api.common.auth;
 
 import "api/common/base.proto";
 import "api/common/r.proto";
@@ -46,7 +46,7 @@ message GrpcRUserLoginDTO {
   /*
   R
   */
-  api.common.GrpcR result = 1;
+  GrpcR result = 1;
 
   /*
   Data
@@ -59,10 +59,10 @@ message GrpcUserLoginDTO {
   /*
   Base
   */
-  api.common.GrpcBase base = 1;
+  GrpcBase base = 1;
 
   string login_name = 2; // 登录名称
   int64 user_id = 3; // 用户ID
   int64 user_password_id = 4; // 用户密码ID
-  uint32 enable_flag = 5; // 使能标识
+  int32 enable_flag = 5; // 使能标识
 }

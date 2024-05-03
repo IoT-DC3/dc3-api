@@ -16,58 +16,29 @@
 
 syntax = "proto3";
 
-package api.center.manager;
+package api.common.driver;
 
 import "api/common/base.proto";
 import "api/common/page.proto";
-import "api/common/r.proto";
 
 /*
 Config
 */
-option java_package = "io.github.pnoker.api.center.manager";
-option java_outer_classname = "QueryProto";
-option objc_class_prefix = "Query";
+option java_package = "io.github.pnoker.api.common.driver";
+option java_outer_classname = "EntityProto";
+option objc_class_prefix = "Driver";
 option java_multiple_files = true;
 
 /*
-Driver ID Query
+Driver Report
 */
-message GrpcDriverQuery {
-  /*
-  Driver ID
-  */
-  int64 driver_id = 1;
-}
-
-/*
-Profile ID Query
-*/
-message GrpcProfileQuery {
-  /*
-  Profile ID
-  */
-  int64 profile_id = 1;
-}
-
-/*
-Point ID Query
-*/
-message GrpcPointQuery {
-  /*
-  Point ID
-  */
-  int64 point_id = 1;
-}
-
-/*
-Device ID Query
-*/
-message GrpcDeviceQuery {
-  /*
-  Device ID
-  */
-  int64 device_id = 1;
+message GrpcDriverReportDTO {
+  int32 device_count = 1;
+  int32 point_count = 2;
+  int32 driver_attribute_count = 3;
+  int32 point_attribute_count = 4;
+  int32 driver_config_count = 5;
+  int32 point_config_count = 6;
 }
 
 

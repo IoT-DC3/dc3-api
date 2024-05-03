@@ -19,6 +19,9 @@ syntax = "proto3";
 package api.common.driver;
 
 import "api/common/r.proto";
+import "api/common/entity.proto";
+import "driver_query.proto";
+import "driver_entity.proto";
 
 /*
 Config
@@ -32,39 +35,36 @@ option java_multiple_files = true;
 Api
 */
 service DriverApi {
-  rpc LastValue (GrpcPointValueQuery) returns (GrpcRPointValueDTO);
+  rpc SelectById (GrpcDriverQuery) returns (GrpcRDriverDTO);
+  rpc GetDriverReport (GrpcDriverQuery) returns (GrpcRDriverReportDTO);
 }
 
-message GrpcPointValueQuery {
-  int64 device_id = 1; // 设备ID
-  int64 point_id = 2; //点位ID
-
-  /*
-  Tenant ID
-  */
-  int64 tenant_id = 3;
-}
-
-
-message GrpcRPointValueDTO {
+/*
+Driver R
+*/
+message GrpcRDriverDTO {
   /*
   R
   */
-  api.common.GrpcR result = 1;
+  GrpcR result = 1;
 
   /*
   Data
   */
-  GrpcPointValueDTO data = 2;
+  GrpcDriverDTO data = 2;
 }
 
+/*
+Driver Report R
+*/
+message GrpcRDriverReportDTO {
+  /*
+  R
+  */
+  GrpcR result = 1;
 
-message GrpcPointValueDTO {
-  int64 id = 1;
-  int64 device_id = 2;//设备ID
-  int64 point_id = 3;//位号ID
-  string value = 4;//处理值
-  string raw_value = 5;//原始值
-  int64 origin_time = 6;//采集时间
-  int64 create_time = 7;//入库时间
+  /*
+  Data
+  */
+  GrpcDriverReportDTO data = 2;
 }

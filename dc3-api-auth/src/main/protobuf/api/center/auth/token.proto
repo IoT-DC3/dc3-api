@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-package api.center.auth;
+package api.common.auth;
 
 import "api/common/r.proto";
 
@@ -49,7 +49,7 @@ message GrpcRTokenDTO {
   /*
   R
   */
-  api.common.GrpcR result = 1;
+  GrpcR result = 1;
 
   /*数据, 返回过期时间*/
   string data = 2;
