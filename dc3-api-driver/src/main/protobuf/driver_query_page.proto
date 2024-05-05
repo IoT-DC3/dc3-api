@@ -19,68 +19,74 @@ syntax = "proto3";
 package api.common.driver;
 
 import "api/common/page.proto";
-import "api/common/r.proto";
-import "api/common/entity.proto";
-import "driver_query.proto";
-import "driver_query_page.proto";
 
 /*
 Config
 */
 option java_package = "io.github.pnoker.api.common.driver";
-option java_outer_classname = "PointProto";
+option java_outer_classname = "QueryPageProto";
 option objc_class_prefix = "Driver";
 option java_multiple_files = true;
 
 /*
-Api
+Page Device Query
 */
-service PointApi {
-  rpc List (GrpcPagePointQuery) returns (GrpcRPagePointDTO);
-  rpc SelectById (GrpcPointQuery) returns (GrpcRPointDTO);
-}
-
-/*
-Point R Page
-*/
-message GrpcRPagePointDTO {
-  /*
-  R
-  */
-  GrpcR result = 1;
-
-  /*
-  Data
-  */
-  GrpcPagePointDTO data = 2;
-}
-
-/*
-Point Page
-*/
-message GrpcPagePointDTO {
+message GrpcPageDeviceQuery {
   /*
   Page
   */
   GrpcPage page = 1;
 
   /*
-  Data
+  租户ID
   */
-  repeated GrpcPointDTO data = 2;
+  int64 tenant_id = 2;
+
+  /*
+  驱动ID
+  */
+  int64 driver_id = 3;
+
+  /*
+  Device ID
+  */
+  int64 device_id = 4;
 }
 
 /*
-Point
+Page Point Query
 */
-message GrpcRPointDTO {
+message GrpcPagePointQuery {
   /*
-  R
+  Page
   */
-  GrpcR result = 1;
+  GrpcPage page = 1;
 
   /*
-  Data
+  租户ID
   */
-  GrpcPointDTO data = 2;
+  int64 tenant_id = 2;
+
+  /*
+  驱动ID
+  */
+  int64 driver_id = 3;
+
+  /*
+  Device ID
+  */
+  int64 device_id = 4;
+
+  /*
+  Profile ID
+  */
+  int64 profile_id = 5;
+
+  /*
+  Point ID
+  */
+  int64 point_id = 6;
 }
+
+
+

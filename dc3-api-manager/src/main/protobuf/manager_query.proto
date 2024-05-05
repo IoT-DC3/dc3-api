@@ -27,11 +27,11 @@ option objc_class_prefix = "Manager";
 option java_multiple_files = true;
 
 /*
-Driver ID Query
+驱动ID Query
 */
 message GrpcDriverQuery {
   /*
-  Driver ID
+  驱动ID
   */
   int64 driver_id = 1;
 }

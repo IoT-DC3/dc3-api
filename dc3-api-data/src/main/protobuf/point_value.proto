@@ -40,7 +40,7 @@ message GrpcPointValueQuery {
   int64 point_id = 2; //点位ID
 
   /*
-  Tenant ID
+  租户ID
   */
   int64 tenant_id = 3;
 }

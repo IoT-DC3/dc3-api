@@ -18,9 +18,11 @@ syntax = "proto3";
 
 package api.common.driver;
 
+import "api/common/page.proto";
 import "api/common/r.proto";
 import "api/common/entity.proto";
 import "driver_query.proto";
+import "driver_query_page.proto";
 
 /*
 Config
@@ -34,10 +36,14 @@ option java_multiple_files = true;
 Api
 */
 service DeviceApi {
+  rpc List (GrpcPageDeviceQuery) returns (GrpcRPageDeviceDTO);
   rpc SelectById (GrpcDeviceQuery) returns (GrpcRDeviceDTO);
 }
 
-message GrpcRDeviceDTO {
+/*
+Device R Page
+*/
+message GrpcRPageDeviceDTO {
   /*
   R
   */
@@ -46,5 +52,60 @@ message GrpcRDeviceDTO {
   /*
   Data
   */
-  GrpcDeviceDTO data = 2;
+  GrpcPageDeviceDTO data = 2;
+}
+
+/*
+Device Page
+*/
+message GrpcPageDeviceDTO {
+  /*
+  Page
+  */
+  GrpcPage page = 1;
+
+  /*
+  Data
+  */
+  repeated GrpcRDeviceAttachDTO data = 2;
+}
+
+/*
+  Device
+  */
+message GrpcRDeviceDTO {
+  /*
+  R
+  */
+  GrpcR result = 1;
+
+  /*
+  Device Attach
+  */
+  GrpcRDeviceAttachDTO data = 2;
+}
+
+/*
+  Device Attach
+  */
+message GrpcRDeviceAttachDTO {
+  /*
+  Device
+  */
+  GrpcDeviceDTO device = 1;
+
+  /*
+  Point ID Array
+  */
+  repeated int64 point_ids = 2;
+
+  /*
+  DriverAttributeConfig Map
+  */
+  map<int64, GrpcDriverAttributeConfigDTO> driverConfigMap = 3;
+
+  /*
+  PointAttributeConfig Map
+  */
+  map<int64, GrpcPointAttributeConfigDTO> pointConfigMap = 4;
 }

@@ -20,8 +20,8 @@ package api.common.driver;
 
 import "api/common/r.proto";
 import "api/common/entity.proto";
-import "driver_query.proto";
 import "driver_entity.proto";
+import "driver_query.proto";
 
 /*
 Config
@@ -35,36 +35,28 @@ option java_multiple_files = true;
 Api
 */
 service DriverApi {
-  rpc SelectById (GrpcDriverQuery) returns (GrpcRDriverDTO);
-  rpc GetDriverReport (GrpcDriverQuery) returns (GrpcRDriverReportDTO);
+  rpc DriverRegister (GrpcDriverRegisterDTO) returns (GrpcRDriverRegisterDTO);
 }
 
-/*
-Driver R
-*/
-message GrpcRDriverDTO {
+message GrpcRDriverRegisterDTO {
   /*
   R
   */
   GrpcR result = 1;
 
   /*
-  Data
+  驱动
   */
-  GrpcDriverDTO data = 2;
-}
-
-/*
-Driver Report R
-*/
-message GrpcRDriverReportDTO {
-  /*
-  R
-  */
-  GrpcR result = 1;
+  GrpcDriverDTO driver = 2;
 
   /*
-  Data
+  驱动属性集合
   */
-  GrpcDriverReportDTO data = 2;
+  repeated GrpcDriverAttributeDTO driver_attributes = 3;
+
+  /*
+  位号属性集合
+  */
+  repeated GrpcPointAttributeDTO point_attributes = 4;
+
 }

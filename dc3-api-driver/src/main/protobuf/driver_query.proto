@@ -27,21 +27,11 @@ option objc_class_prefix = "Driver";
 option java_multiple_files = true;
 
 /*
-Driver ID Query
-*/
-message GrpcDriverQuery {
-  /*
-  Driver ID
-  */
-  int64 driver_id = 1;
-}
-
-/*
-Device ID And Driver ID Query
+Device Query
 */
 message GrpcDeviceQuery {
   /*
-  Driver ID
+  驱动ID
   */
   int64 driver_id = 1;
 
@@ -52,11 +42,11 @@ message GrpcDeviceQuery {
 }
 
 /*
-Device ID And Driver ID And Point ID Query
+Point Query
 */
 message GrpcPointQuery {
   /*
-  Driver ID
+  驱动ID
   */
   int64 driver_id = 1;
 
@@ -64,10 +54,16 @@ message GrpcPointQuery {
   Device ID
   */
   int64 device_id = 2;
+
+  /*
+  Profile ID
+  */
+  int64 profile_id = 3;
+
   /*
   Point ID
   */
-  int64 point_id = 3;
+  int64 point_id = 4;
 }
 
 

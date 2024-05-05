@@ -18,8 +18,7 @@ syntax = "proto3";
 
 package api.common.driver;
 
-import "api/common/base.proto";
-import "api/common/page.proto";
+import "api/common/entity.proto";
 
 /*
 Config
@@ -29,17 +28,31 @@ option java_outer_classname = "EntityProto";
 option objc_class_prefix = "Driver";
 option java_multiple_files = true;
 
-/*
-Driver Report
-*/
-message GrpcDriverReportDTO {
-  int32 device_count = 1;
-  int32 point_count = 2;
-  int32 driver_attribute_count = 3;
-  int32 point_attribute_count = 4;
-  int32 driver_config_count = 5;
-  int32 point_config_count = 6;
-}
+message GrpcDriverRegisterDTO {
+  /*
+  Tenant name
+  */
+  string tenant = 1;
 
+  /*
+  Driver client name
+  */
+  string client = 2;
+
+  /*
+  Driver property
+  */
+  GrpcDriverDTO driver = 3;
+
+  /*
+  Driver attribute list
+  */
+  repeated GrpcDriverAttributeDTO driver_attributes = 4;
+
+  /*
+  Point attribute list
+  */
+  repeated GrpcPointAttributeDTO point_attributes = 5;
+}
 
 
