@@ -100,12 +100,12 @@ message GrpcRDeviceAttachDTO {
   repeated int64 point_ids = 2;
 
   /*
-  DriverAttributeConfig Map
+  DriverAttributeConfig List
   */
-  map<int64, GrpcDriverAttributeConfigDTO> driverConfigMap = 3;
+  repeated GrpcDriverAttributeConfigDTO driverConfigs = 3;
 
   /*
-  PointAttributeConfig Map
+  PointAttributeConfig List
   */
-  map<int64, GrpcPointAttributeConfigDTO> pointConfigMap = 4;
+  repeated GrpcPointAttributeConfigDTO pointConfigs = 4;
 }

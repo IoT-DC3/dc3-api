@@ -28,6 +28,7 @@ option java_multiple_files = true;
 
 /*
 Device Query
+在驱动中获取设备信息仅需要限制该设备是否属于该驱动即可
 */
 message GrpcDeviceQuery {
   /*
@@ -43,6 +44,7 @@ message GrpcDeviceQuery {
 
 /*
 Point Query
+在驱动中获取位号信息仅需要限制该位号是否属于该驱动即可
 */
 message GrpcPointQuery {
   /*
@@ -51,19 +53,9 @@ message GrpcPointQuery {
   int64 driver_id = 1;
 
   /*
-  Device ID
-  */
-  int64 device_id = 2;
-
-  /*
-  Profile ID
-  */
-  int64 profile_id = 3;
-
-  /*
   Point ID
   */
-  int64 point_id = 4;
+  int64 point_id = 2;
 }
 
 
