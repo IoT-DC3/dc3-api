@@ -50,13 +50,18 @@ message GrpcRDriverRegisterDTO {
   GrpcDriverDTO driver = 2;
 
   /*
+  设备ID集合
+  */
+  repeated int64 device_ids = 3;
+
+  /*
   驱动属性集合
   */
-  repeated GrpcDriverAttributeDTO driver_attributes = 3;
+  repeated GrpcDriverAttributeDTO driver_attributes = 4;
 
   /*
   位号属性集合
   */
-  repeated GrpcPointAttributeDTO point_attributes = 4;
+  repeated GrpcPointAttributeDTO point_attributes = 5;
 
 }
