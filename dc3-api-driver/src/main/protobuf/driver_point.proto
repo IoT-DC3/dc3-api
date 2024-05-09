@@ -36,7 +36,7 @@ option java_multiple_files = true;
 Api
 */
 service PointApi {
-  rpc List (GrpcPagePointQuery) returns (GrpcRPagePointDTO);
+  rpc SelectByPage (GrpcPagePointQuery) returns (GrpcRPagePointDTO);
   rpc SelectById (GrpcPointQuery) returns (GrpcRPointDTO);
 }
 

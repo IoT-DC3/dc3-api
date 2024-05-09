@@ -30,6 +30,17 @@ option java_multiple_files = true;
 Device Query
 在驱动中获取设备信息仅需要限制该设备是否属于该驱动即可
 */
+message GrpcDriverQuery {
+  /*
+  驱动ID
+  */
+  int64 driver_id = 1;
+}
+
+/*
+Device Query
+在驱动中获取设备信息仅需要限制该设备是否属于该驱动即可
+*/
 message GrpcDeviceQuery {
   /*
   驱动ID

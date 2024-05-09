@@ -73,7 +73,7 @@ message GrpcPageDeviceDTO {
 }
 
 /*
-Device R Array
+Device R 集合
 */
 message GrpcRDeviceListDTO {
   /*

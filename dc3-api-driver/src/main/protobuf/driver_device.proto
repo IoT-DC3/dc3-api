@@ -36,7 +36,7 @@ option java_multiple_files = true;
 Api
 */
 service DeviceApi {
-  rpc List (GrpcPageDeviceQuery) returns (GrpcRPageDeviceDTO);
+  rpc SelectByPage (GrpcPageDeviceQuery) returns (GrpcRPageDeviceDTO);
   rpc SelectById (GrpcDeviceQuery) returns (GrpcRDeviceDTO);
 }
 
@@ -95,7 +95,7 @@ message GrpcRDeviceAttachDTO {
   GrpcDeviceDTO device = 1;
 
   /*
-  Point ID Array
+  Point ID 集合
   */
   repeated int64 point_ids = 2;
 
