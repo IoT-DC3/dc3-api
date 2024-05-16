@@ -21,7 +21,6 @@ package api.common.driver;
 import "api/common/r.proto";
 import "api/common/entity.proto";
 import "driver_entity.proto";
-import "driver_query.proto";
 
 /*
 Config
