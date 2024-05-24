@@ -36,7 +36,7 @@ option java_multiple_files = true;
 Api
 */
 service DriverApi {
-  rpc List (GrpcPageDriverQuery) returns (GrpcRPageDriverDTO);
+  rpc SelectByPage (GrpcPageDriverQuery) returns (GrpcRPageDriverDTO);
   rpc SelectByDriverId (GrpcDriverQuery) returns (GrpcRDriverDTO);
   rpc SelectByDeviceId (GrpcDeviceQuery) returns (GrpcRDriverDTO);
 }

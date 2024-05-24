@@ -36,7 +36,7 @@ option java_multiple_files = true;
 Api
 */
 service DeviceApi {
-  rpc List (GrpcPageDeviceQuery) returns (GrpcRPageDeviceDTO);
+  rpc SelectByPage (GrpcPageDeviceQuery) returns (GrpcRPageDeviceDTO);
   rpc SelectByProfileId (GrpcProfileQuery) returns (GrpcRDeviceListDTO);
   rpc SelectByDriverId (GrpcDriverQuery) returns (GrpcRDeviceListDTO);
   rpc SelectByDeviceId (GrpcDeviceQuery) returns (GrpcRDeviceDTO);
