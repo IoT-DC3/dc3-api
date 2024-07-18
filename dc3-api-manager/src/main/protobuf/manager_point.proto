@@ -36,6 +36,7 @@ Api
 */
 service PointApi {
   rpc SelectByPage (GrpcPagePointQuery) returns (GrpcRPagePointDTO);
+  rpc selectPointByPage (GrpcPagePointQuery) returns (GrpcRPagePointDTO);
 }
 
 /*
